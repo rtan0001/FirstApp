@@ -1,0 +1,26 @@
+---
+- name: common deps
+  yum:
+    name: "{{ item }}"
+    state: installed
+  become: yes
+  with_items:
+  - unzip
+  - wget
+  - openssl-devel
+  - python-devel
+  - python-pip
+  - gcc
+
+- name: common deps
+  pip:
+    name: "{{ item }}"
+    state: present
+  become: yes
+  with_items:
+  - pyyaml
+  - boto
+  - boto3
+  - awscli
+  - sops
+  - jinja2-cli

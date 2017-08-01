@@ -1,0 +1,757 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Resources for delivery of the Unit Guide Manager service.
+
+Mappings:
+  StackTags:
+    Standard:
+      ApplicationName: UnitGuideManager
+      Customer: CHANGEME
+      EnvironmentType: CHANGEME
+      PatternName: CHANGEME
+      SecClassValue: CHANGEME
+      SolutionName: UnitGuideManager
+  IpRanges:
+    Standard:
+      MonashStaffWireless: 49.127.0.0/17
+      MonashStaffWired: 130.194.0.0/16          #Includes On Premise Server
+      MonashStudents: 118.138.0.0/16            #Includes wireless and wired
+      MonashESolutionsWired1: 130.194.80.0/23
+      MonashESolutionsWired2: 130.194.84.0/23
+      SharedServices: 10.21.0.0/19
+      WAFSubnetAZ1: 10.21.40.0/23
+      WAFSubnetAZ2: 10.21.42.0/23
+
+Parameters:
+  ConfigFilename:
+    Type: String
+    Description: Name of the config file to pull the secrets from
+  WEBJVMxms:
+    Type: String
+    Description: Percentage of Total Memory to be allocated to JVM - initial heap
+  WEBJVMxmx:
+    Type: String
+    Description: Percentage of Total Memory to be allocated to JVM - max heap size
+  SyncJVMxms:
+    Type: String
+    Description: Percentage of Total Memory to be allocated to JVM - initial heap
+  SyncJVMxmx:
+    Type: String
+    Description: Percentage of Total Memory to be allocated to JVM - max heap size
+  AMIParam:
+    Type: AWS::EC2::Image::Id
+  ELBScheme:
+    AllowedValues:
+    - internal
+    - internet-facing
+    Type: String
+  HostedZoneName:
+    Type: String
+  KMSMasterKeyARN:
+    Type: String
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+  S3Bucket:
+    Type: String
+  SSLCertificateARN:
+    Type: String
+  VersionParam:
+    Type: String
+  DBallocatedstorage:
+    Type: String
+  DBclass:
+    Type: String
+  DBengine:
+    Type: String
+  DBengineversion:
+    Type: String
+  DBlicencemodel:
+    Type: String
+  DBpassword:
+    NoEcho: true
+    Type: String
+    MaxLength: 30
+  DBuser:
+    Type: String
+  ElbSubnetA:
+    Type: String
+  ElbSubnetB:
+    Type: String
+  InitialDatabaseSnapshot:
+    Type: String
+  RdsSubnetA:
+    Type: String
+  RdsSubnetB:
+    Type: String
+  VpcID:
+    Type: String
+  WebSubnetA:
+    Type: String
+  WebSubnetB:
+    Type: String
+  WebAutoScalingDesiredCapacity:
+    Type: Number
+  WebAutoScalingMinSize:
+    Type: Number
+  WebAutoScalingMaxSize:
+    Type: Number
+  WebInstanceType:
+    Type: String
+    Default: t2.medium
+    AllowedValues: ["t2.small", "t2.medium", "t2.large", "m1.small", "m1.medium", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "m3.medium", "m3.large", "m3.xlarge", "m3.2xlarge", "m4.large", "m4.xlarge", "m4.2xlarge", "m4.4xlarge", "m4.10xlarge" ]
+    ConstraintDescription: "Must be a valid EC2 Instance Type"
+  SyncServerInstanceType:
+    Type: String
+    Default: t2.medium
+    AllowedValues: ["t2.small", "t2.medium", "t2.large", "m1.small", "m1.medium", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "m3.medium", "m3.large", "m3.xlarge", "m3.2xlarge", "m4.large", "m4.xlarge", "m4.2xlarge", "m4.4xlarge", "m4.10xlarge" ]
+    ConstraintDescription: "Must be a valid EC2 Instance Type"
+  OptionGroupName:
+    Type: String
+  MultiAZ:
+    Type: String
+  SyncServerSubnetA:
+    Type: String
+  SyncServerSubnetB:
+    Type: String
+  SyncServerAutoScalingDesiredCapacity:
+    Type: Number
+  SyncServerAutoScalingMinSize:
+    Type: Number
+  SyncServerAutoScalingMaxSize:
+    Type: Number
+  Account:
+    Type: String
+    AllowedValues: ["dev", "poc", "qat", "prd" ]
+
+Resources:
+  dbDBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: Subnets available for the RDS DB Instance
+      SubnetIds:
+      - Ref: RdsSubnetA
+      - Ref: RdsSubnetB
+      Tags:
+      - Key: Name
+        Value: dbDBSubnetGroup
+      - Key: ApplicationName
+        Value: !FindInMap [StackTags, "Standard", ApplicationName]
+      - Key: AutomationTool
+        Value: CloudFormation
+      - Key: Customer
+        Value: !FindInMap [StackTags, "Standard", Customer]
+      - Key: EnvironmentType
+        Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+      - Key: PatternName
+        Value: !FindInMap [StackTags, "Standard", PatternName]
+      - Key: SecClassValue
+        Value: !FindInMap [StackTags, "Standard", SecClassValue]
+      - Key: SolutionName
+        Value: !FindInMap [StackTags, "Standard", SolutionName]
+
+  dbDBVPCSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for RDS DB Instance.
+      VpcId:
+        Ref: VpcID
+      SecurityGroupIngress:
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired1]
+        FromPort: '1521'
+        IpProtocol: tcp
+        ToPort: '1521'
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired2]
+        FromPort: '1521'
+        IpProtocol: tcp
+        ToPort: '1521'
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired1]
+        FromPort: '5500'
+        IpProtocol: tcp
+        ToPort: '5500'
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired2]
+        FromPort: '5500'
+        IpProtocol: tcp
+        ToPort: '5500'
+      - SourceSecurityGroupId:
+          Ref: webInstanceSecurityGroup
+        FromPort: '1521'
+        IpProtocol: tcp
+        ToPort: '1521'
+      - SourceSecurityGroupId:
+          Ref: syncServerSecurityGroup
+        FromPort: '1521'
+        IpProtocol: tcp
+        ToPort: '1521'
+      Tags:
+      - Key: Name
+        Value: dbdbvpcsecgrp
+      - Key: ApplicationName
+        Value: !FindInMap [StackTags, "Standard", ApplicationName]
+      - Key: AutomationTool
+        Value: CloudFormation
+      - Key: Customer
+        Value: !FindInMap [StackTags, "Standard", Customer]
+      - Key: EnvironmentType
+        Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+      - Key: PatternName
+        Value: !FindInMap [StackTags, "Standard", PatternName]
+      - Key: SecClassValue
+        Value: !FindInMap [StackTags, "Standard", SecClassValue]
+      - Key: SolutionName
+        Value: !FindInMap [StackTags, "Standard", SolutionName]
+
+  dbRDSDB:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      AllocatedStorage:
+        Ref: DBallocatedstorage
+      OptionGroupName:
+        Ref: OptionGroupName
+      MultiAZ:
+        Ref: MultiAZ
+      DBInstanceClass:
+        Ref: DBclass
+      DBSnapshotIdentifier:
+        Ref: InitialDatabaseSnapshot
+      DBInstanceIdentifier:
+        !Sub "${AWS::StackName}-db-${Account}"
+      DBSubnetGroupName:
+        Ref: dbDBSubnetGroup
+      Engine:
+        Ref: DBengine
+      EngineVersion:
+        Ref: DBengineversion
+      LicenseModel:
+        Ref: DBlicencemodel
+      MasterUserPassword:
+        Ref: DBpassword
+      MasterUsername:
+        Ref: DBuser
+      StorageType: gp2
+      Tags:
+      - Key: Name
+        Value: dbRDSDB
+      - Key: ApplicationName
+        Value: !FindInMap [StackTags, "Standard", ApplicationName]
+      - Key: AutomationTool
+        Value: CloudFormation
+      - Key: Customer
+        Value: !FindInMap [StackTags, "Standard", Customer]
+      - Key: EnvironmentType
+        Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+      - Key: PatternName
+        Value: !FindInMap [StackTags, "Standard", PatternName]
+      - Key: SecClassValue
+        Value: !FindInMap [StackTags, "Standard", SecClassValue]
+      - Key: SolutionName
+        Value: !FindInMap [StackTags, "Standard", SolutionName]
+      VPCSecurityGroups:
+      - !GetAtt dbDBVPCSecurityGroup.GroupId
+
+  dbRDSDNSAlias:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      Comment: Static alias for RDS endpoint.
+      HostedZoneName: !Sub "${HostedZoneName}."
+      Name: !Sub "${AWS::StackName}-rds-${Account}.${HostedZoneName}."
+      ResourceRecords:
+      - !GetAtt dbRDSDB.Endpoint.Address
+      TTL: '60'
+      Type: CNAME
+
+  webAutoscalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    DependsOn: dbRDSDB
+    Properties:
+      AvailabilityZones:
+      - ap-southeast-2a
+      - ap-southeast-2b
+      DesiredCapacity: !Ref WebAutoScalingDesiredCapacity
+      HealthCheckGracePeriod: 300
+      HealthCheckType: ELB
+      LaunchConfigurationName:
+        Ref: webLaunchConfiguration
+      LoadBalancerNames:
+      - Ref: webELB
+      MaxSize: !Ref WebAutoScalingMaxSize
+      MinSize: !Ref WebAutoScalingMinSize
+      Tags:
+      - Key: Name
+        PropagateAtLaunch: true
+        Value: UnitGuideManager/web
+      - Key: ApplicationName
+        Value: !FindInMap [StackTags, "Standard", ApplicationName]
+        PropagateAtLaunch: true
+      - Key: AutomationTool
+        Value: CloudFormation
+        PropagateAtLaunch: true
+      - Key: Customer
+        Value: !FindInMap [StackTags, "Standard", Customer]
+        PropagateAtLaunch: true
+      - Key: EnvironmentType
+        Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+        PropagateAtLaunch: true
+      - Key: PatternName
+        Value: !FindInMap [StackTags, "Standard", PatternName]
+        PropagateAtLaunch: true
+      - Key: SecClassValue
+        Value: !FindInMap [StackTags, "Standard", SecClassValue]
+        PropagateAtLaunch: true
+      - Key: SolutionName
+        Value: !FindInMap [StackTags, "Standard", SolutionName]
+        PropagateAtLaunch: true
+
+      VPCZoneIdentifier:
+      - Ref: WebSubnetA
+      - Ref: WebSubnetB
+
+    #######
+    # If you need to pause the CNF signals from rolling back the servers on failure
+    # you might need to comment out these two sections
+    CreationPolicy:
+      ResourceSignal:
+        Count: 1
+        Timeout: "PT15M"
+
+    UpdatePolicy:
+      AutoScalingReplacingUpdate:
+        WillReplace: true
+      AutoScalingRollingUpdate:
+        PauseTime: 'PT5M'
+        MinInstancesInService: 1
+        MaxBatchSize: 1
+        WaitOnResourceSignals: true
+
+  webEC2InstanceAccessRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Action:
+          - sts:AssumeRole
+          Effect: Allow
+          Principal:
+            Service:
+            - ec2.amazonaws.com
+        Version: '2012-10-17'
+      Path: "/"
+      Policies:
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            - logs:DescribeLogStreams
+            Effect: Allow
+            Resource: "arn:aws:logs:*:*:*"
+          Version: '2012-10-17'
+        PolicyName: cloudwatchlogs
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - s3:GetObject
+            - s3:GetObjectAcl
+            - s3:PutObject
+            - s3:PutObjectAcl
+            Effect: Allow
+            Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
+          Version: '2012-10-17'
+        PolicyName: s3_retreval
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - elasticloadbalancing:DescribeInstanceHealth
+            Effect: Allow
+            Resource: "*"
+          Version: '2012-10-17'
+        PolicyName: check_elb_health
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - kms:Decrypt
+            Effect: Allow
+            Resource:
+              Ref: KMSMasterKeyARN
+          Version: '2012-10-17'
+        PolicyName: kms_decryption
+
+  webELB:
+    Type: AWS::ElasticLoadBalancing::LoadBalancer
+    Properties:
+      ConnectionDrainingPolicy:
+        Enabled: true
+        Timeout: 400
+      CrossZone: 'true'
+      HealthCheck:
+        HealthyThreshold: '3'
+        Interval: '10'
+        Target: 'HTTP:80/health/status'
+        Timeout: '5'
+        UnhealthyThreshold: '4'
+      LBCookieStickinessPolicy:
+      - PolicyName: StickinessPolicy
+      Listeners:
+      - InstancePort: '80'
+        LoadBalancerPort: '80'
+        Protocol: HTTP
+        PolicyNames: [ StickinessPolicy ]
+      - InstancePort: '80'
+        LoadBalancerPort: '443'
+        Protocol: HTTPS
+        PolicyNames: [ StickinessPolicy ]
+        SSLCertificateId:
+          Ref: SSLCertificateARN
+      Scheme:
+        Ref: ELBScheme
+      SecurityGroups:
+      - Ref: webELBSecurityGroup
+      Subnets:
+      - Ref: ElbSubnetA
+      - Ref: ElbSubnetB
+      Tags:
+      - Key: ApplicationName
+        Value: !FindInMap [StackTags, "Standard", ApplicationName]
+      - Key: AutomationTool
+        Value: CloudFormation
+      - Key: Customer
+        Value: !FindInMap [StackTags, "Standard", Customer]
+      - Key: EnvironmentType
+        Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+      - Key: PatternName
+        Value: !FindInMap [StackTags, "Standard", PatternName]
+      - Key: SecClassValue
+        Value: !FindInMap [StackTags, "Standard", SecClassValue]
+      - Key: SolutionName
+        Value: !FindInMap [StackTags, "Standard", SolutionName]
+
+  webELBDNSAlias:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      Comment: Static alias for ELB endpoint.
+      HostedZoneName: !Sub "${HostedZoneName}."
+      Name: !Sub "${AWS::StackName}.${HostedZoneName}."
+      ResourceRecords:
+      - !GetAtt webELB.DNSName
+      TTL: '60'
+      Type: CNAME
+
+  webELBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow incoming on ports 80/tcp and 443/tcp
+      VpcId:
+        Ref: VpcID
+      SecurityGroupIngress:
+      # Allow access from SharedServices VPC so jenkins can perform tests
+      - CidrIp: !FindInMap [IpRanges, "Standard", SharedServices]
+        FromPort: 80
+        IpProtocol: tcp
+        ToPort: 80
+      - CidrIp: !FindInMap [IpRanges, "Standard", SharedServices]
+        FromPort: 443
+        IpProtocol: tcp
+        ToPort: 443
+
+      # Monash IP address range
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWireless]
+        FromPort: 80
+        IpProtocol: tcp
+        ToPort: 80
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWireless]
+        FromPort: 443
+        IpProtocol: tcp
+        ToPort: 443
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWireless]
+        FromPort: 0
+        IpProtocol: icmp
+        ToPort: 0
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWired]
+        FromPort: 80
+        IpProtocol: tcp
+        ToPort: 80
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWired]
+        FromPort: 443
+        IpProtocol: tcp
+        ToPort: 443
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWired]
+        FromPort: 0
+        IpProtocol: icmp
+        ToPort: 0
+      - CidrIp: !FindInMap [IpRanges, "Standard", WAFSubnetAZ1]
+        FromPort: 80
+        IpProtocol: tcp
+        ToPort: 80
+      - CidrIp: !FindInMap [IpRanges, "Standard", WAFSubnetAZ1]
+        FromPort: 443
+        IpProtocol: tcp
+        ToPort: 443
+      - CidrIp: !FindInMap [IpRanges, "Standard", WAFSubnetAZ1]
+        FromPort: 0
+        IpProtocol: icmp
+        ToPort: 0
+      - CidrIp: !FindInMap [IpRanges, "Standard", WAFSubnetAZ2]
+        FromPort: 80
+        IpProtocol: tcp
+        ToPort: 80
+      - CidrIp: !FindInMap [IpRanges, "Standard", WAFSubnetAZ2]
+        FromPort: 443
+        IpProtocol: tcp
+        ToPort: 443
+      - CidrIp: !FindInMap [IpRanges, "Standard", WAFSubnetAZ2]
+        FromPort: 0
+        IpProtocol: icmp
+        ToPort: 0
+      Tags:
+      - Key: Name
+        Value: webelbsecgrp
+      - Key: ApplicationName
+        Value: !FindInMap [StackTags, "Standard", ApplicationName]
+      - Key: AutomationTool
+        Value: CloudFormation
+      - Key: Customer
+        Value: !FindInMap [StackTags, "Standard", Customer]
+      - Key: EnvironmentType
+        Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+      - Key: PatternName
+        Value: !FindInMap [StackTags, "Standard", PatternName]
+      - Key: SecClassValue
+        Value: !FindInMap [StackTags, "Standard", SecClassValue]
+      - Key: SolutionName
+        Value: !FindInMap [StackTags, "Standard", SolutionName]
+
+  webInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+      - Ref: webEC2InstanceAccessRole
+
+  webInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow elb access to 80 plus enabled remote access
+      VpcId:
+        Ref: VpcID
+      SecurityGroupIngress:
+      - FromPort: '80'
+        IpProtocol: tcp
+        SourceSecurityGroupId:
+          Ref: webELBSecurityGroup
+        ToPort: '80'
+      - FromPort: '0'
+        IpProtocol: icmp
+        SourceSecurityGroupId:
+          Ref: webELBSecurityGroup
+        ToPort: '0'
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWireless]
+        FromPort: 22
+        IpProtocol: tcp
+        ToPort: 22
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWireless]
+        FromPort: 0
+        IpProtocol: icmp
+        ToPort: 0
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired1]
+        FromPort: 22
+        IpProtocol: tcp
+        ToPort: 22
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired1]
+        FromPort: 0
+        IpProtocol: icmp
+        ToPort: 0
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired2]
+        FromPort: 22
+        IpProtocol: tcp
+        ToPort: 22
+      - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired2]
+        FromPort: 0
+        IpProtocol: icmp
+        ToPort: 0
+      Tags:
+      - Key: Name
+        Value: webasgsecgrp
+      - Key: ApplicationName
+        Value: !FindInMap [StackTags, "Standard", ApplicationName]
+      - Key: AutomationTool
+        Value: CloudFormation
+      - Key: Customer
+        Value: !FindInMap [StackTags, "Standard", Customer]
+      - Key: EnvironmentType
+        Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+      - Key: PatternName
+        Value: !FindInMap [StackTags, "Standard", PatternName]
+      - Key: SecClassValue
+        Value: !FindInMap [StackTags, "Standard", SecClassValue]
+      - Key: SolutionName
+        Value: !FindInMap [StackTags, "Standard", SolutionName]
+
+  webLaunchConfiguration:
+    Type: AWS::AutoScaling::LaunchConfiguration
+
+    Properties:
+      IamInstanceProfile:
+        Ref: webInstanceProfile
+      ImageId:
+        Ref: AMIParam
+      InstanceType: !Ref WebInstanceType
+      KeyName:
+        Ref: KeyName
+      SecurityGroups:
+      - Ref: webInstanceSecurityGroup
+      UserData:
+        Fn::Base64:
+             !Sub |
+              #!/bin/sh
+              export CONFIG_FILE=${ConfigFilename}
+              aws s3 cp --region ap-southeast-2 s3://${S3Bucket}/$CONFIG_FILE /opt/ugm/appConf/$CONFIG_FILE
+              sops -d /opt/ugm/appConf/$CONFIG_FILE > /opt/ugm/appConf/ugm.yaml
+              jinja2 /opt/ugm/appConf/ugeprops.xml.jinja /opt/ugm/appConf/ugm.yaml > /opt/ugm/appConf/ugeprops.xml
+              export JVM_xms=`free -m | awk '/Mem/{printf("%.0f"), $2*${WEBJVMxms}/100}'`
+              export JVM_xmx=`free -m | awk '/Mem/{printf("%.0f"), $2*${WEBJVMxmx}/100}'`
+              jinja2 -D javaxms=$JVM_xms -D javaxmx=$JVM_xmx /opt/ugm/setEnvironment.sh.jinja > /opt/ugm/setEnvironment.sh
+              service ugm start
+              until [ "$state" == "\"InService\"" ]; do state=$(aws --region ${AWS::Region} elb describe-instance-health --load-balancer-name ${webELB} --instances $(curl -s http://169.254.169.254/latest/meta-data/instance-id) --query InstanceStates[0].State); echo "Testing Loadbalancer state, still $state"; sleep 10; done
+              cfn-signal -e $? --stack ${AWS::StackId} --resource webAutoscalingGroup --region ${AWS::Region}
+
+  syncServerSecurityGroup:
+      Type: AWS::EC2::SecurityGroup
+      Properties:
+        GroupDescription: Allows internal ssh access
+        VpcId: !Ref VpcID
+        SecurityGroupIngress:
+        - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWireless]
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: !FindInMap [IpRanges, "Standard", MonashStaffWireless]
+          FromPort: 0
+          IpProtocol: icmp
+          ToPort: 0
+        - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired1]
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired1]
+          FromPort: 0
+          IpProtocol: icmp
+          ToPort: 0
+        - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired2]
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: !FindInMap [IpRanges, "Standard", MonashESolutionsWired2]
+          FromPort: 0
+          IpProtocol: icmp
+          ToPort: 0
+        Tags:
+        - Key: Name
+          Value: sync-server-sg
+        - Key: ApplicationName
+          Value: !FindInMap [StackTags, "Standard", ApplicationName]
+        - Key: AutomationTool
+          Value: CloudFormation
+        - Key: Customer
+          Value: !FindInMap [StackTags, "Standard", Customer]
+        - Key: EnvironmentType
+          Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+        - Key: PatternName
+          Value: !FindInMap [StackTags, "Standard", PatternName]
+        - Key: SecClassValue
+          Value: !FindInMap [StackTags, "Standard", SecClassValue]
+        - Key: SolutionName
+          Value: !FindInMap [StackTags, "Standard", SolutionName]
+
+  syncServerLaunchConfiguration:
+      Type: AWS::AutoScaling::LaunchConfiguration
+
+      Properties:
+        ImageId: !Ref AMIParam
+        IamInstanceProfile: !Ref webInstanceProfile
+        InstanceType: !Ref SyncServerInstanceType
+        KeyName: !Ref KeyName
+        SecurityGroups:
+        - !Ref syncServerSecurityGroup
+        UserData:
+          Fn::Base64:
+               !Sub |
+                #!/bin/sh
+                export CONFIG_FILE=${ConfigFilename}
+                aws s3 cp --region ap-southeast-2 s3://${S3Bucket}/$CONFIG_FILE /opt/ugm/appConf/$CONFIG_FILE
+                sops -d /opt/ugm/appConf/$CONFIG_FILE > /opt/ugm/appConf/ugm.yaml
+                jinja2 /opt/ugm/appConf/ugeprops.xml.jinja /opt/ugm/appConf/ugm.yaml > /opt/ugm/appConf/ugeprops.xml
+                sed -i -e '/.*<dbImporterInterval>.* /s/<!--//' /opt/ugm/appConf/ugeprops.xml
+                sed -i -e '/.*<dbImporterInterval>.* /s/-->//' /opt/ugm/appConf/ugeprops.xml
+                export JVM_xms=`free -m | awk '/Mem/{printf("%.0f"), $2*${SyncJVMxms}/100}'`
+                export JVM_xmx=`free -m | awk '/Mem/{printf("%.0f"), $2*${SyncJVMxmx}/100}'`
+                jinja2 -D javaxms=$JVM_xms -D javaxmx=$JVM_xmx /opt/ugm/setEnvironment.sh.jinja > /opt/ugm/setEnvironment.sh
+                service ugm start
+                # until [ "$health" -ne 0 ]; do health=$(curl localhost/health/status | grep -i -c healthy); echo "Testing ugm service is running"; sleep 5; done
+                cfn-signal -e $? --stack ${AWS::StackId} --resource syncServerAutoscalingGroup --region ${AWS::Region}
+
+
+  syncServerAutoscalingGroup:
+      Type: AWS::AutoScaling::AutoScalingGroup
+      DependsOn: dbRDSDB
+      Properties:
+        AvailabilityZones:
+        - ap-southeast-2a
+        - ap-southeast-2b
+        DesiredCapacity: !Ref SyncServerAutoScalingDesiredCapacity
+        MaxSize: !Ref SyncServerAutoScalingMaxSize
+        MinSize: !Ref SyncServerAutoScalingMinSize
+        HealthCheckGracePeriod: 300
+        HealthCheckType: EC2
+        LaunchConfigurationName: !Ref syncServerLaunchConfiguration
+        Tags:
+        - Key: Name
+          PropagateAtLaunch: true
+          Value: UnitGuideManager/sync
+        - Key: ApplicationName
+          Value: !FindInMap [StackTags, "Standard", ApplicationName]
+          PropagateAtLaunch: true
+        - Key: AutomationTool
+          Value: CloudFormation
+          PropagateAtLaunch: true
+        - Key: Customer
+          Value: !FindInMap [StackTags, "Standard", Customer]
+          PropagateAtLaunch: true
+        - Key: EnvironmentType
+          Value: !FindInMap [StackTags, "Standard", EnvironmentType]
+          PropagateAtLaunch: true
+        - Key: PatternName
+          Value: !FindInMap [StackTags, "Standard", PatternName]
+          PropagateAtLaunch: true
+        - Key: SecClassValue
+          Value: !FindInMap [StackTags, "Standard", SecClassValue]
+          PropagateAtLaunch: true
+        - Key: SolutionName
+          Value: !FindInMap [StackTags, "Standard", SolutionName]
+          PropagateAtLaunch: true
+
+        VPCZoneIdentifier:
+        - Ref: SyncServerSubnetA
+        - Ref: SyncServerSubnetB
+
+      #######
+      # If you need to pause the CNF signals from rolling back the servers on failure
+      # you might need to comment out these two sections
+      CreationPolicy:
+        ResourceSignal:
+          Count: 1
+          Timeout: "PT15M"
+
+      UpdatePolicy:
+        AutoScalingReplacingUpdate:
+          WillReplace: true
+        AutoScalingRollingUpdate:
+          PauseTime: 'PT5M'
+          MinInstancesInService: 1
+          MaxBatchSize: 1
+          WaitOnResourceSignals: true
+
+Outputs:
+  DomainName:
+    Value: !Ref webELBDNSAlias
+  InstanceS3RoleARN:
+    Value: !GetAtt webEC2InstanceAccessRole.Arn
+  RDSDomainName:
+    Value: !Ref dbRDSDNSAlias

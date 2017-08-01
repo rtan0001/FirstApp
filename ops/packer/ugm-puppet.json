@@ -1,0 +1,51 @@
+{
+  "variables": {
+    "artifact_id" : "{{env `ARTIFACT_BUILD_NUMBER`}}",
+    "satellite_key" : "AK_RHEL7_SOE_DEV"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "ssh_pty": true,
+      "region": "ap-southeast-2",
+      "source_ami": "ami-83898ae0",
+      "instance_type": "t2.small",
+      "ssh_username": "ec2-user",
+      "ami_name": "cevo-puppet-ugm",
+      "force_deregister": true,
+      "user_data_file": "scripts/userdata-base.yml",
+      "vpc_id": "vpc-830996e6",
+      "subnet_id": "subnet-2916504c",
+      "security_group_id": "sg-04948160",
+      "iam_instance_profile":  "security-jenkins",
+      "disable_stop_instance": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo service puppet stop",
+        "sudo subscription-manager register --org=\"Monash_University\" --activationkey={{user `satellite_key`}} --force",
+        "puppet agent apply"
+      ]
+    },
+    {
+      "type": "puppet-masterless",
+      "facter": {
+        "fqdn": "ugm"
+      },
+      "manifest_file": "puppet/ugm.pp",
+      "module_paths": [
+        "puppet/modules",
+        "puppet/roles"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo yum remove -y puppet"
+      ]
+    }
+  ]
+}

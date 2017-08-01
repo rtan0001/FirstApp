@@ -1,0 +1,84 @@
+{
+  "variables": {
+    "artifact_id" : "{{env `ARTIFACT_BUILD_NUMBER`}}",
+    "artifactory_user" : "{{env `ARTIFACTORY_USER`}}",
+    "artifactory_password" : "{{env `ARTIFACTORY_PASSWORD`}}",
+    "package_name" : "{{env `PACKAGE_NAME`}}",
+    "packer_hostname" : "cevo-redhat-ugm-{{ timestamp }}.apps.monash.edu",
+    "satellite_key" : "AK_RHEL7_SOE_DEV"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "ssh_pty": true,
+      "region": "ap-southeast-2",
+      "ami_users": [ "439149920780","829292609546","750438120855"],
+      "source_ami": "ami-a8d4c7cb",
+      "instance_type": "t2.small",
+      "ssh_username": "ec2-user",
+      "ami_name": "cevo-redhat-ugm-{{ timestamp }}",
+      "vpc_id": "vpc-ae6ae2cb",
+      "subnet_id": "subnet-934bbfe5",
+      "run_tags": {
+        "Name": "packer/{{user `artifact_id`}}",
+        "ArtifactID": "{{user `artifact_id`}}",
+        "ServiceOwner": "EDA",
+        "EnvironmentType": "Build",
+        "ServiceName": "UnitGuideManager",
+        "Customer": "EDA",
+        "AutomationTool": "packer",
+        "EndOfLife": "20180307"
+      },
+      "tags": {
+        "ArtifactID": "{{user `artifact_id`}}",
+        "ServiceOwner": "EDA",
+        "EnvironmentType": "Build",
+        "ServiceName": "UnitGuideManager",
+        "Customer": "EDA",
+        "AutomationTool": "packer",
+        "EndOfLife": "20180307",
+        "DoNotDelete": "True"
+      }
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo hostname {{user `packer_hostname`}}",
+        "sudo sh -c \"hostname > /etc/hostname\"",
+        "sudo service network restart",
+        "sudo rpm -ivh --force http://sas-cfg02-c08.ocio.monash.edu/pub/katello-ca-consumer-latest.noarch.rpm",
+        "sudo /usr/bin/katello-rhsm-consumer",
+        "sudo subscription-manager register --org=\"Monash_University\"  --serverurl=sas-cfg02-c08.ocio.monash.edu --activationkey=\"AK_RHEL7_SOE_DEV\"",
+        "sudo yum update -y kernel",
+        "sudo yum update -y",
+        "sudo yum install -y puppet",
+        "sudo yum install -y java-1.8.0-oracle-devel",
+        "sudo subscription-manager remove --all",
+        "sudo subscription-manager unregister",
+        "sudo subscription-manager clean"
+      ]
+    },
+    {
+      "type": "puppet-masterless",
+      "facter": {
+        "fqdn": "ugm",
+        "artifactory_user": "{{user `artifactory_user`}}",
+        "artifactory_password": "{{user `artifactory_password`}}",
+        "package_name": "{{user `package_name`}}"
+      },
+      "manifest_file": "puppet/ugm.pp",
+      "module_paths": [
+        "puppet/modules",
+        "puppet/roles"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo yum remove -y puppet"
+      ]
+    }
+  ]
+}

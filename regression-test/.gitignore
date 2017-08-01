@@ -1,0 +1,4 @@
+behave-venv
+*.swp
+reports
+.venv

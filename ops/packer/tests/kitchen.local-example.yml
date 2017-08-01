@@ -1,0 +1,30 @@
+---
+driver:
+  name: vagrant
+
+
+provisioner:
+  name: puppet_apply
+  manifests_path: "../puppet/"
+  manifest: ugm.pp
+  modules_path: "../puppet/modules:../puppet/roles"
+  custom_facts:
+    fqdn: ugm
+    artifactory_user: <% ENV['ARTIFACTORY_USER'] || "foobar" %>
+    artifactory_password: <% ENV['ARTIFACTORY_PASSWORD'] || "testing" %>
+    package_name: <% ENV['UGM_PACKAGE_NAME'] %>
+
+busser:
+  ruby_bindir: /usr/bin
+
+
+
+platforms:
+  - name: centos-6.5
+    driver_plugin: vagrant
+    driver_config:
+      box: centos/7
+
+
+suites:
+  - name: default

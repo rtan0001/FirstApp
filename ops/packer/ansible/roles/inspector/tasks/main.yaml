@@ -1,0 +1,12 @@
+---
+- name: download inspector
+  get_url:
+    url: https://d1wk0tztpsntt1.cloudfront.net/linux/latest/install
+    dest: /tmp
+  become: yes
+
+- name: install inspector
+  shell: bash install
+  args:
+    chdir: /tmp
+  become: yes

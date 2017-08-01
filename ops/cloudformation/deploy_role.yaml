@@ -1,0 +1,222 @@
+---
+Description: Provides access credentials for UGM application deployment.
+Parameters:
+
+  S3Bucket:
+    Type: String
+
+Resources:
+
+  ugmKMSKey:
+    Type: "AWS::KMS::Key"
+    Properties:
+        Description: "Secrets key for Unit Guide Manager"
+
+        KeyPolicy:
+            Version: '2012-10-17'
+            Id: key-consolepolicy-3
+            Statement:
+            - Sid: Enable IAM User Permissions
+              Effect: Allow
+              Principal:
+                AWS: !Sub "arn:aws:iam::${AWS::AccountId}:root"
+              Action: kms:*
+              Resource: "*"
+
+  ugmKeyAlias:
+      Type: AWS::KMS::Alias
+      Properties:
+        AliasName: alias/ugm-new
+        TargetKeyId:
+          Ref: ugmKMSKey
+
+  KMSAdminRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Action:
+          - sts:AssumeRole
+          Effect: Allow
+          Principal:
+            Service:
+            - ec2.amazonaws.com
+        - Action: sts:AssumeRole
+          Effect: Allow
+          Principal:
+            AWS:
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Steve.Mactaggart@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Elliott.Gorrell@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Trent.Hornibrook@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Padma.Conjivaram@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Jie.Lin@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Victor.Chen@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Wesley.Wang@monash.edu
+
+        Version: '2012-10-17'
+      Path: "/"
+      Policies:
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - kms:*
+            Effect: Allow
+            Resource: !GetAtt ugmKMSKey.Arn
+          Version: '2012-10-17'
+        PolicyName: kms_decryption
+
+  ugmAppDeployRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+        - Action:
+          - sts:AssumeRole
+          Effect: Allow
+          Principal:
+            Service:
+            - ec2.amazonaws.com
+        - Action: sts:AssumeRole
+          Effect: Allow
+          Principal:
+            AWS:
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Steve.Mactaggart@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Elliott.Gorrell@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Trent.Hornibrook@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-Automation/Padma.Conjivaram@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-AppAdmin/Jei.Lin@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-AppAdmin/Victor.Chen@monash.edu
+            - arn:aws:sts::439149920780:assumed-role/CORP-DEV-AppAdmin/Wesley.Wang@monash.edu
+            - arn:aws:iam::315717337178:role/codeninjas-jenkins-AgentHostRole-1L315T1BVMI2R
+
+        Version: '2012-10-17'
+      Path: "/"
+      Policies:
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - s3:GetObject
+            - s3:GetObjectAcl
+            - s3:PutObject
+            - s3:PutObjectAcl
+            Effect: Allow
+            Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
+          Version: '2012-10-17'
+        PolicyName: s3_retreval
+
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - kms:Decrypt
+            Effect: Allow
+            Resource: !GetAtt ugmKMSKey.Arn
+          Version: '2012-10-17'
+        PolicyName: kms_decryption
+
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - cloudformation:CreateStack
+            - cloudformation:UpdateStack
+            - cloudformation:DescribeStacks
+            - cloudformation:CreateChangeSet
+            - cloudformation:DescribeChangeSet
+            - cloudformation:DeleteChangeSet
+            - cloudformation:ExecuteChangeSet
+            - ec2:AttachVolume
+            - ec2:CreateVolume
+            - ec2:DeleteVolume
+            - ec2:DescribeSubnets
+            - ec2:DescribeAccountAttributes
+            - ec2:CreateSecurityGroup
+            - ec2:DeleteSecurityGroup
+            - ec2:AuthorizeSecurityGroupIngress
+            - ec2:AuthorizeSecurityGroupEgress
+            - ec2:RevokeSecurityGroupIngress
+            - ec2:RevokeSecurityGroupEgress
+            - ec2:RunInstances
+            - ec2:TerminateInstances
+            - ec2:StopInstances
+            - ec2:DescribeVolumes
+            - ec2:DetachVolume
+            - ec2:DescribeInstances
+            - ec2:DescribeSecurityGroups
+            - ec2:DescribeImages
+            - ec2:CreateTags
+            - ec2:DeleteTags
+            - ec2:DescribeKeyPairs
+            - elasticloadbalancing:ApplySecurityGroupsToLoadBalancer
+            - elasticloadbalancing:CreateLoadBalancer
+            - elasticloadbalancing:DeleteLoadBalancer
+            - elasticloadbalancing:CreateLoadBalancerListeners
+            - elasticloadbalancing:ModifyLoadBalancerAttributes
+            - elasticloadbalancing:DetachLoadBalancerFromSubnets
+            - elasticloadbalancing:ConfigureHealthCheck
+            - elasticloadbalancing:DescribeInstanceHealth
+            - elasticloadbalancing:DescribeLoadBalancerAttributes
+            - elasticloadbalancing:AttachLoadBalancerToSubnets
+            - elasticloadbalancing:DescribeLoadBalancers
+            - elasticloadbalancing:SetLoadBalancerPoliciesOfListener
+            - elasticloadbalancing:CreateLoadBalancerPolicy
+            - route53:ChangeResourceRecordSets
+            - route53:GetChange
+            - route53:GetHostedZone
+            - route53:ListHostedZonesByName
+            - route53:ListResourceRecordSets
+            - route53:ListHostedZones
+            - iam:CreateRole
+            - iam:PutRolePolicy
+            - iam:GetRole
+            - iam:CreateInstanceProfile
+            - iam:GetRolePolicy
+            - iam:GetInstanceProfile
+            - iam:PassRole
+            - iam:DeleteInstanceProfile
+            - iam:DeleteRolePolicy
+            - iam:ListInstanceProfilesForRole
+            - iam:AddRoleToInstanceProfile
+            - iam:DeleteRole
+            - iam:RemoveRoleFromInstanceProfile
+            Effect: Allow
+            Resource: "*"
+          Version: '2012-10-17'
+        PolicyName: deployment
+      - PolicyDocument:
+          Statement:
+          - Action:
+            - autoscaling:AttachLoadBalancers
+            - autoscaling:CreateAutoScalingGroup
+            - autoscaling:DeleteAutoScalingGroup
+            - autoscaling:DescribeScalingActivities
+            - autoscaling:DescribeAutoScalingInstances
+            - autoscaling:CreateLaunchConfiguration
+            - autoscaling:CreateOrUpdateTags
+            - autoscaling:DeleteLaunchConfiguration
+            - autoscaling:DeleteTags
+            - autoscaling:DescribeAutoScalingGroups
+            - autoscaling:DescribeLaunchConfigurations
+            - autoscaling:DescribeLoadBalancers
+            - autoscaling:DescribeTags
+            - autoscaling:SetDesiredCapacity
+            - autoscaling:UpdateAutoScalingGroup
+            - rds:CreateDBInstance
+            - rds:CreateDBSubnetGroup
+            - rds:DescribeDBInstances
+            - rds:DescribeDBSubnetGroups
+            - rds:DescribeDBSnapshots
+            - rds:ModifyDBInstance
+            - rds:ModifyDBSubnetGroup
+            - rds:RestoreDBInstanceFromDBSnapshot
+            - elasticloadbalancing:DeleteLoadBalancerListeners
+            Effect: Allow
+            Resource: "*"
+          Version: '2012-10-17'
+        PolicyName: deployment_part2
+
+Outputs:
+  DeployRoleARN:
+    Value: !GetAtt ugmAppDeployRole.Arn
+  KMSAdminRoleARN:
+    Value: !GetAtt KMSAdminRole.Arn
+  KMSKey:
+    Value: !GetAtt ugmKMSKey.Arn

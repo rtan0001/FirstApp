@@ -1,0 +1,13 @@
+---
+- name: fetch java rpm
+  get_url:
+    validate_certs: no
+    headers: "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie"
+    url: http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.rpm
+    dest: /tmp/java8.rpm
+
+- name: install java
+  yum:
+    name: /tmp/java8.rpm
+    state: present
+  become: yes

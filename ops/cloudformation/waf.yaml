@@ -1,0 +1,81 @@
+---
+Description: Standard Public WAF/CloudFront Stack v0.2.3
+Outputs:
+  DistributionId:
+    Value:
+      Ref: StandardCloudFrontDistribution
+  Endpoint:
+    Value:
+      Fn::GetAtt:
+      - StandardCloudFrontDistribution
+      - DomainName
+Parameters:
+  Comment:
+    Description: Comment to be populated on the CloudFront Distribution
+    Type: String
+  LoggingBucket:
+    AllowedValues:
+    - s3-v20-cie-cloudfront.s3.amazonaws.com
+    - s3-v20-rie-cloudfront.s3.amazonaws.com
+    - s3-v20-qat-cloudfront.s3.amazonaws.com
+    Description: Which S3 bucket should this CloudFront log to, as a full s3 hostname
+    Type: String
+  PublicDomainName:
+    Description: A comma delimited list of the public domain names to terminate on
+      the CloudFront distribution, (e.g. uet.apps.monash.edu,uet.apps.monash.edu.au)
+    Type: CommaDelimitedList
+  SSLCertificateID:
+    Description: This certificate should be valid for the 'PublicDomainName' specified
+      as a parameter.
+    Type: String
+  OriginEndpoint:
+    Description: Which endpoint to forward to?
+    Type: String
+Resources:
+  StandardCloudFrontDistribution:
+    Properties:
+      DistributionConfig:
+        Aliases:
+          Ref: PublicDomainName
+        Comment:
+          Ref: Comment
+        DefaultCacheBehavior:
+          AllowedMethods:
+          - GET
+          - HEAD
+          - OPTIONS
+          - PUT
+          - PATCH
+          - POST
+          - DELETE
+          Compress: 'true'
+          ForwardedValues:
+            Cookies:
+              Forward: all
+            Headers:
+            - "*"
+            QueryString: 'true'
+          TargetOriginId: Origin 1
+          ViewerProtocolPolicy: redirect-to-https
+        Enabled: 'true'
+        Logging:
+          Bucket:
+            Ref: LoggingBucket
+          IncludeCookies: 'true'
+        Origins:
+        - CustomOriginConfig:
+            HTTPPort: 80
+            HTTPSPort: 443
+            OriginProtocolPolicy: https-only
+            OriginSSLProtocols:
+            - TLSv1
+            - TLSv1.1
+            - TLSv1.2
+          DomainName:
+            Ref: OriginEndpoint
+          Id: Origin 1
+        ViewerCertificate:
+          IamCertificateId:
+            Ref: SSLCertificateID
+          SslSupportMethod: sni-only
+    Type: AWS::CloudFront::Distribution

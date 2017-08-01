@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  roles:
+# common and java are now run as part of the base-ami build process
+# this was implemented to speed up the build.
+
+# Once agreed we should remove these tasks from here and get a pipeline around the base-ami process
+
+# - common
+# - java
+  - ugm
+  - demo
+# - universal_forwarder

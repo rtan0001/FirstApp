@@ -1,0 +1,57 @@
+{
+    "application": {
+        "VpcID":  "vpc-f079f595",
+        "Account":  "dev",
+
+        "OptionGroupName": "default:oracle-ee-12-1",
+
+        "MultiAZ": "false",
+
+        "ElbSubnetA": "subnet-537ded24",
+        "ElbSubnetB": "subnet-583b513d",
+
+        "WebSubnetA": "subnet-8a9a0afd",
+        "WebSubnetB": "subnet-c985eeac",
+
+        "RdsSubnetA": "subnet-663b5103",
+        "RdsSubnetB": "subnet-907cece7",
+
+        "WebInstanceType": "t2.medium",
+        "WebAutoScalingDesiredCapacity": "1",
+        "WebAutoScalingMinSize": "1",
+        "WebAutoScalingMaxSize": "2",
+
+        "SyncServerSubnetA": "subnet-8a0540fc",
+        "SyncServerSubnetB": "subnet-9a3f6efe",
+
+        "SyncServerInstanceType": "t2.medium",
+        "SyncServerAutoScalingDesiredCapacity": "1",
+        "SyncServerAutoScalingMinSize": "1",
+        "SyncServerAutoScalingMaxSize": "1",
+
+        "WEBJVMxms": "30",
+        "WEBJVMxmx": "45",
+        "SyncJVMxms": "30",
+        "SyncJVMxmx": "45",
+
+        "ELBScheme": "internal",
+        "HostedZoneName": "corp-dev.aws.monash.edu",
+        "SSLCertificateARN": "arn:aws:acm:ap-southeast-2:439149920780:certificate/9630231e-824b-4e2e-bb69-2bef221371f2",
+
+        "S3Bucket": "monash-ugm-dev",
+        "ConfigFilename": "ugm.dev.yaml",
+
+        "KeyName": "cevo-dev",
+
+        "DBuser": "ugmdevdbuser",
+        "DBpassword": "KMSEncryptedAQICAHgiekgIFspAYGosujIJ0UQxjrfnm8I6Fim7+G6Hcca07QHB1kdvvPKx5T+pshGOwoiDAAAAejB4BgkqhkiG9w0BBwagazBpAgEAMGQGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMAkk/TcZvkLVKc/p7AgEQgDcZpbpGrjS5uF76+A2GyddSkBqPdkgjquecKlZQFT39cbyDkN2z++HVQ3PPyXjJnaVi5oqFgbx6/KMSEncrypted",
+        "DBclass": "db.t2.medium",
+        "DBengine": "oracle-ee",
+        "DBlicencemodel": "bring-your-own-license",
+        "DBengineversion": "12.1.0.2.v6",
+        "DBallocatedstorage": "270",
+        "InitialDatabaseSnapshot": "arn:aws:rds:ap-southeast-2:439149920780:snapshot:ugm-dev-snapshot-19-june-2017",
+
+        "KMSMasterKeyARN": "arn:aws:kms:ap-southeast-2:439149920780:key/f8b40a9d-07ca-495b-a6c7-255a146e1555"
+    }
+}

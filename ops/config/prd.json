@@ -1,0 +1,63 @@
+{
+  "application": {
+    "VpcID":  "vpc-b5e366d0",
+    "Account":  "prd",
+
+    "OptionGroupName": "oracle-12c-oem",
+
+    "MultiAZ": "true",
+
+    "ElbSubnetA": "subnet-19d45b6e",
+    "ElbSubnetB": "subnet-74a7c111",
+
+    "WebSubnetA": "subnet-9bd55aec",
+    "WebSubnetB": "subnet-e3a6c086",
+
+    "RdsSubnetA": "subnet-12d45b65",
+    "RdsSubnetB": "subnet-96a6c0f3",
+
+    "WebInstanceType": "t2.medium",
+    "WebAutoScalingDesiredCapacity": "1",
+    "WebAutoScalingMinSize": "1",
+    "WebAutoScalingMaxSize": "2",
+
+    "SyncServerSubnetA": "subnet-4bb3e63d",
+    "SyncServerSubnetB": "subnet-59a88e3d",
+
+    "SyncServerInstanceType": "t2.medium",
+    "SyncServerAutoScalingDesiredCapacity": "1",
+    "SyncServerAutoScalingMinSize": "1",
+    "SyncServerAutoScalingMaxSize": "1",
+
+    "WEBJVMxms": "30",
+    "WEBJVMxmx": "45",
+    "SyncJVMxms": "30",
+    "SyncJVMxmx": "45",
+
+    "ELBScheme": "internal",
+    "HostedZoneName": "corp-prd.aws.monash.edu",
+    "SSLCertificateARN": "arn:aws:acm:ap-southeast-2:750438120855:certificate/75b8a1d9-ed0d-4caf-a431-a6368139af48",
+
+    "S3Bucket": "monash-ugm-prd",
+    "ConfigFilename": "ugm.prd.yaml",
+
+    "KeyName": "codeninjas-prd",
+
+    "DBuser": "ugmprddbuser",
+    "DBpassword": "KMSEncryptedAQICAHi56wRTtAxAGYV9VI2O4uiLARkiiWV7Ul1NBKQ8cYCZmAE0AySfkM6RCn5keZ5XGgAbAAAAcTBvBgkqhkiG9w0BBwagYjBgAgEAMFsGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMkLyRBBz1sYahNd6dAgEQgC6z7zRJhsFYEtE5cHolSC9K60V9F727JDndWPknJVksn03ClgvRfvA9oxc6s3nw/KMSEncrypted",
+    "DBclass": "db.m4.large",
+    "DBengine": "oracle-ee",
+    "DBlicencemodel": "bring-your-own-license",
+    "DBengineversion": "12.1.0.2.v6",
+    "DBallocatedstorage": "350",
+    "InitialDatabaseSnapshot": "arn:aws:rds:ap-southeast-2:750438120855:snapshot:initial-ugm",
+    "KMSMasterKeyARN": "arn:aws:kms:ap-southeast-2:750438120855:key/790dd78f-360b-417e-8527-97827be29f98"
+    },
+    "WAF": {
+        "SSLCertificateID": "ASCAJ4JTMFR7YYF7YHARE",
+        "PublicDomainName": "unitguidemanager.monash.edu",
+        "Comment": "UGM PRD CloudFront",
+        "LoggingBucket": "s3-v20-cie-cloudfront.s3.amazonaws.com",
+        "OriginEndpoint": "waf-pub.corp-iae.aws.monash.edu"
+    }
+}

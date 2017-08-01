@@ -1,0 +1,6492 @@
+html {
+    font-size: 62.5%;
+    font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    text-align: left
+}
+.std-font {
+    font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif
+}
+.std-txt {
+    font-size: 15px;
+    font-size: 1.5rem
+}
+body {
+    color: #000;
+    font-size: 1.5em
+}
+input,
+button,
+textarea,
+select {
+    font-size: inherit;
+    font-family: inherit
+}
+a {
+    color: #0066a9
+}
+h1,
+.largest-txt {
+    font-size: 35px;
+    font-size: 3.5rem
+}
+h2,
+.large-txt {
+    font-size: 25px;
+    font-size: 2.5rem
+}
+h3,
+.med-txt {
+    font-size: 18px;
+    font-size: 1.8rem
+}
+h4,
+.reg-txt {
+    font-size: 16px;
+    font-size: 1.6rem
+}
+.smallest-txt {
+    font-size: 12px;
+    font-size: 1.2rem
+}
+h1,
+h2,
+.font-weight-normal {
+    font-weight: normal
+}
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    font-weight: inherit
+}
+p,
+.std-line-height {
+    line-height: 1.5em
+}
+.no-list-style {
+    padding-left: 0;
+    list-style: none
+}
+.list-links {
+    padding-left: 0
+}
+.list-links li {
+    list-style: none;
+    padding-left: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background: url('images/bullet.png') no-repeat .5em .9em
+}
+code {
+    font-size: 15px
+}
+.nm {
+    margin: 0
+}
+.nmt {
+    margin-top: 0
+}
+.nmb {
+    margin-bottom: 0
+}
+.nml {
+    margin-left: 0
+}
+.nmr {
+    margin-right: 0
+}
+.mth {
+    margin-top: .5em
+}
+.mt {
+    margin-top: 1em
+}
+.mtd {
+    margin-top: 2em
+}
+.mtt {
+    margin-top: 3em
+}
+.mbh {
+    margin-bottom: .5em
+}
+.mb {
+    margin-bottom: 1em
+}
+.mbd {
+    margin-bottom: 2em
+}
+.mbt {
+    margin-bottom: 3em
+}
+.mtbh {
+    margin-top: .5em;
+    margin-bottom: .5em
+}
+.mtb {
+    margin-top: 1em;
+    margin-bottom: 1em
+}
+.mtbd {
+    margin-top: 2em;
+    margin-bottom: 2em
+}
+.mtbt {
+    margin-top: 3em;
+    margin-bottom: 3em
+}
+.mlh {
+    margin-left: .5em
+}
+.ml {
+    margin-left: 1em
+}
+.mld {
+    margin-left: 2em
+}
+.mlt {
+    margin-left: 3em
+}
+.mrh {
+    margin-right: .5em
+}
+.mr {
+    margin-right: 1em
+}
+.mrd {
+    margin-right: 2em
+}
+.mrt {
+    margin-right: 3em
+}
+.mlrh {
+    margin-left: .5em;
+    margin-right: .5em
+}
+.mlr {
+    margin-left: 1em;
+    margin-right: 1em
+}
+.mlrd {
+    margin-left: 2em;
+    margin-right: 3em
+}
+.mlrt {
+    margin-left: 3em;
+    margin-right: 3em
+}
+.np {
+    padding: 0
+}
+.npt {
+    padding-top: 0
+}
+.npb {
+    padding-bottom: 0
+}
+.npl {
+    padding-left: 0
+}
+.npr {
+    padding-right: 0
+}
+.pth {
+    padding-top: .5em
+}
+.pt {
+    padding-top: 1em
+}
+.ptd {
+    padding-top: 2em
+}
+.ptt {
+    padding-top: 3em
+}
+.pbh {
+    padding-bottom: .5em
+}
+.pb {
+    padding-bottom: 1em
+}
+.pbd {
+    padding-bottom: 2em
+}
+.pbt {
+    padding-bottom: 3em
+}
+.ptbh {
+    padding-top: .5em;
+    padding-bottom: .5em
+}
+.ptb {
+    padding-top: 1em;
+    padding-bottom: 1em
+}
+.ptbd {
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+.ptbt {
+    padding-top: 3em;
+    padding-bottom: 3em
+}
+.plh {
+    padding-left: .5em
+}
+.pl {
+    padding-left: 1em
+}
+.pld {
+    padding-left: 2em
+}
+.plt {
+    padding-left: 3em
+}
+.prh {
+    padding-right: .5em
+}
+.pr {
+    padding-right: 1em
+}
+.prd {
+    padding-right: 2em
+}
+.prt {
+    padding-right: 3em
+}
+.plrh {
+    padding-left: .5em;
+    padding-right: .5em
+}
+.plr {
+    padding-left: 1em;
+    padding-right: 1em
+}
+.plrd {
+    padding-left: 2em;
+    padding-right: 3em
+}
+.plrt {
+    padding-left: 3em;
+    padding-right: 3em
+}
+.no-js body {
+    font-size: 1.5em
+}
+.js .js-error {
+    display: none
+}
+.no-js .js-error {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1em;
+    background: #eee;
+    font-weight: bold
+}
+.hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.unhidden {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow: visible
+}
+.sr-hidden {
+    display: none
+}
+#ajax-loader {
+    margin: 0 0 0 5px
+}
+.icon-loader {
+    position: fixed;
+    top: 45%;
+    right: 50%;
+    z-index: 10
+}
+.apng #ajax-loader {
+    background-image: url("images/spinner-apng.png");
+    background-repeat: no-repeat;
+    background-size: 44px 44px;
+    display: none;
+    height: 44px;
+    width: 44px
+}
+.apng #ajax-loader img {
+    display: none
+}
+h1[tabindex="-1"]:focus,
+h2[tabindex="-1"]:focus,
+h3[tabindex="-1"]:focus,
+h4[tabindex="-1"]:focus,
+h5[tabindex="-1"]:focus,
+div[tabindex="-1"]:focus,
+.no-focus[tabindex="-1"]:focus {
+    outline: none;
+    border: none
+}
+.focus-only-link,
+.focus-only-link>a {
+    color: inherit;
+    text-decoration: none;
+    cursor: text
+}
+.focus-only-link:focus,
+.focus-only-link>a:focus {
+    outline: none;
+    box-shadow: none
+}
+.focus-only-link:hover,
+.focus-only-link>a:hover {
+    text-decoration: none
+}
+.clear-left {
+    clear: left
+}
+.clear-right {
+    clear: right
+}
+.clear-both {
+    clear: both
+}
+.clear {
+    clear: both
+}
+.align-left {
+    float: left
+}
+.align-right {
+    float: right
+}
+.text-align-left {
+    text-align: left
+}
+.text-align-center {
+    text-align: center
+}
+.text-align-right {
+    text-align: right
+}
+body {
+    margin: 0
+}
+.page {
+    padding-bottom: 2em
+}
+header,
+footer,
+.row,
+.page,
+.box-model-block {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1
+}
+*,
+*:before,
+*:after,
+.border-box {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+input[type="search"] {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+.quarter,
+.third,
+.two-thirds,
+.half,
+.three-quarters,
+.full {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word
+}
+.quarter.np,
+.third.np,
+.two-thirds.np,
+.half.np,
+.three-quarters.np,
+.full.np {
+    padding: 0
+}
+.full {
+    width: 100%;
+    margin-right: 0
+}
+.half {
+    width: 49%
+}
+.third {
+    width: 32%
+}
+.two-thirds {
+    width: 66%
+}
+.quarter {
+    width: 23.5%
+}
+.three-quarters {
+    width: 74.5%
+}
+.simple-half {
+    width: 50%
+}
+.simple-third {
+    width: 33%
+}
+.simple-two-thirds {
+    width: 66%
+}
+.simple-quarter {
+    width: 25%
+}
+.simple-three-quarters {
+    width: 75%
+}
+.half+.half:last-of-type,
+.quarter+.half:last-of-type,
+.third:last-of-type,
+.third+.two-thirds:last-of-type,
+.quarter:last-of-type,
+.quarter+.three-quarters:last-of-type {
+    margin-right: 0
+}
+.no-lastchild .half {
+    width: 48%
+}
+.no-lastchild .third {
+    width: 31.3%
+}
+.no-lastchild .two-thirds {
+    width: 64%
+}
+.no-lastchild .quarter {
+    width: 23%
+}
+.no-lastchild .three-quarters {
+    width: 73%
+}
+.no-boxsizing .half {
+    width: 45%
+}
+.no-boxsizing .third {
+    width: 29%
+}
+.no-boxsizing .two-thirds {
+    width: 62%
+}
+.no-boxsizing .quarter {
+    width: 20%
+}
+.no-boxsizing .three-quarters {
+    width: 72%
+}
+.wrapper {
+    max-width: 978px;
+    *width: 978px;
+    margin: 0 auto
+}
+.border-top {
+    border-top: 1px solid #ccc;
+    margin-top: 1em;
+    margin-bottom: 1em
+}
+.border-bottom {
+    border-bottom: 1px solid #ccc;
+    margin-top: 1em;
+    margin-bottom: 1em
+}
+.flex-container-column {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column
+}
+.flex-container-row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row
+}
+.flex-container-row-resp {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row
+}
+.flex-container-row-resp>* {
+    padding-right: 1em
+}
+@media only screen and (max-width: 640px) {
+    .flex-container-row-resp {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column
+    }
+}
+.flex-container-col-resp {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column
+}
+@media only screen and (max-width: 640px) {
+    .flex-container-col-resp {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row
+    }
+    .flex-container-col-resp>* {
+        padding-right: 1em
+    }
+}
+.flex-container-row>*,
+.flex-container-row-resp>* {
+    padding-right: 1em
+}
+.flex-full {
+    width: 100%
+}
+.flex-half {
+    width: 50%
+}
+.flex-third {
+    width: 33%
+}
+.flex-two-thirds {
+    width: 66%
+}
+.flex-quarter {
+    width: 25%
+}
+.flex-three-quarters {
+    width: 75%
+}
+.flex-fifth {
+    width: 20%
+}
+.flex-two-fifths {
+    width: 40%
+}
+.flex-three-fifths {
+    width: 60%
+}
+.flex-four-fifths {
+    width: 60%
+}
+.no-flexbox .flex-container-row,
+.no-flexbox .flex-container-row-resp {
+    clear: both
+}
+.no-flexbox .flex-container-row>*,
+.no-flexbox .flex-container-row-resp>* {
+    float: left
+}
+@media only screen and (max-width: 640px) {
+    .no-flexbox .flex-container-row>*,
+    .no-flexbox .flex-container-row-resp>* {
+        float: none
+    }
+}
+.mobile-full-spec {
+    width: 100%;
+    float: none
+}
+.print-only,
+.mobile-show,
+.tablet-show {
+    display: none
+}
+.desktop-show {
+    display: block
+}
+@media only screen and (max-width: 1024px) {
+    .wrapper {
+        width: 96%
+    }
+}
+@media only screen and (max-width: 960px) {
+    .desktop-show {
+        display: none
+    }
+    .tablet-show {
+        display: block
+    }
+}
+@media only screen and (max-width: 640px) {
+    .quarter,
+    .three-quarters,
+    .half,
+    .third,
+    .two-thirds,
+    .full,
+    .mobile-full {
+        width: 100%;
+        float: none
+    }
+    .flex-full,
+    .flex-half,
+    .flex-third,
+    .flex-two-thirds,
+    .flex-quarter,
+    .flex-three-quarters,
+    .flex-fifth,
+    .flex-two-fifths,
+    .flex-three-fifths,
+    .flex.four-fifths {
+        width: 100%
+    }
+    .tablet-show,
+    .desktop-show {
+        display: none
+    }
+    .mobile-show {
+        display: block
+    }
+}
+header {
+    background: #fff;
+    position: relative;
+    z-index: 3;
+    width: 100%
+}
+header h1 {
+    margin-top: .5em;
+    margin-bottom: .5em
+}
+header h1 a {
+    text-decoration: none
+}
+header h1 a:hover,
+header h1 a:active {
+    text-decoration: underline
+}
+.brand-wrapper {
+    height: 102px
+}
+.parent-site-link {
+    float: right
+}
+.parent-site-link .button {
+    margin-right: 0
+}
+.monash-brandheader {
+    float: left;
+    height: 102px;
+    padding-top: 34px
+}
+.monash-brandheader a,
+.monash-logo {
+    width: 423px;
+    height: 50px;
+    display: block;
+    background-image: url(images/monash-logo-1-line.png);
+    background-repeat: no-repeat
+}
+@media only screen and (max-width: 960px) {
+    .monash-brandheader a,
+    .monash-logo {
+        width: 199px;
+        background-image: url(images/monash-logo-2-line.jpg);
+        background-size: 100% 100%;
+        background-position: 0px 0px;
+        padding-left: 0px;
+        margin-top: 12px;
+        height: 61px
+    }
+}
+.svg .monash-brandheader a,
+.svg .monash-logo {
+    background-image: url(images/monash-logo-1-line.svg);
+    background-size: 100% 100%
+}
+@media only screen and (max-width: 960px) {
+    .svg .monash-brandheader a,
+    .svg .monash-logo {
+        background-image: url(images/monash-logo-2-line.svg)
+    }
+}
+.nav-bar {
+    margin-top: 69px;
+    background: #065484;
+    position: relative;
+    z-index: 3;
+    height: 50px;
+    overflow: hidden
+}
+.primary-nav .wrapper>ul {
+    padding: 0;
+    margin: 0
+}
+.primary-nav ul li {
+    float: left;
+    display: block;
+    list-style-type: none;
+    border-left: 1px solid #06476e
+}
+.primary-nav ul li a {
+    font-size: 15px;
+    line-height: 16px;
+    display: block;
+    height: 30px;
+    width: 106px;
+    color: #f5f6f6;
+    padding: 10px 15px 10px 15px;
+    margin: 0;
+    text-decoration: none
+}
+.primary-nav ul li a:hover {
+    text-decoration: underline
+}
+.primary-nav ul li.active {
+    background-color: #f5f6f6
+}
+.primary-nav ul li.active a {
+    color: #065484
+}
+.mobile-nav-button {
+    display: none
+}
+@media only screen and (max-width: 960px) {
+    .monash-brandheader {
+        padding-top: 15px
+    }
+}
+@media only screen and (max-width: 640px) {
+    .parent-site-link {
+        display: none
+    }
+}
+footer {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background: #242424
+}
+.footer-notes {
+    color: #fff;
+    font-size: 12px;
+    font-size: 1.2rem;
+    -webkit-appearance: none
+}
+.footer-notes a {
+    color: #fff
+}
+.parent-site-link-mob a {
+    width: 100%
+}
+table {
+    background: #ccc;
+    border-spacing: 1px
+}
+tr {
+    vertical-align: top
+}
+th,
+td {
+    padding: 0.2em
+}
+th>div,
+td>div {
+    position: relative;
+    height: 100%
+}
+th {
+    background: #eee
+}
+td {
+    background: #fff
+}
+.dataGridContainer {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1
+}
+.dataGridTable .data-grid-first-element {
+    margin-top: 0;
+    padding-top: 1em
+}
+.dataGridHeaderItem {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: normal
+}
+.dataGridHeaderItemLabel {
+    padding-right: 35px;
+    display: block
+}
+.dataGridHeaderItemSortAction a,
+.dataGridDataItemFilterMenu,
+.modal-dialog-inner .dataGridDataItemFilterMenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0
+}
+.dataGridDataItemFilterMenu {
+    width: 20px;
+    height: 20px;
+    background: url("images/filter-menu.png") no-repeat
+}
+.dataGridDataItemFilterMenu:hover {
+    background-color: transparent
+}
+.dataGridHeaderItemSortAction a {
+    width: 30px;
+    height: 30px;
+    background: url("images/sort.png") no-repeat
+}
+.dataGridHeaderItemSortAction a span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.filter-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%
+}
+.dataGridFilter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    margin-top: .5em;
+    margin-bottom: .5em
+}
+.dataGridFilterLabel,
+.dataGridFilterRemoveButton {
+    background-color: #eee;
+    display: block
+}
+.no-flexbox .dataGridFilter,
+.no-flexbox .filter-block,
+.no-flexbox .dataGridFilterLabel,
+.no-flexbox .dataGridFilterRemoveButton {
+    display: inline-block
+}
+.dataGridFilterLabel {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em
+}
+.dataGridFilterRemoveButton {
+    margin-left: 1px;
+    margin-right: .5em;
+    padding-top: 1em;
+    padding-bottom: 1em
+}
+.dataGridFilterRemoveButton a {
+    text-decoration: none;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: .5em;
+    padding-right: .5em
+}
+.data-item-filters {
+    background: #eee;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    text-align: right;
+    font-size: 12px;
+    font-size: 1.2rem
+}
+.data-item-filters>* {
+    display: block;
+    padding: 0.3em
+}
+.data-item-filters a {
+    display: block
+}
+.dataGridHeaderItemSortAction .dataGridHeaderItemSortAction {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dataGridDataItemFilterOutControl,
+.dataGridDataItemFilterOnlyControl {
+    float: none !important;
+    display: block !important
+}
+.dataGridDataItemValue {
+    padding-bottom: 25px
+}
+.modalDialogContents .dataGridTableContainer>div {
+    overflow: scroll;
+    overflow-y: hidden
+}
+@media only screen and (max-width: 960px) {
+    .dataGridTableContainer>div {
+        overflow: scroll;
+        overflow-y: hidden
+    }
+}
+.button,
+button {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    text-decoration: none
+}
+.button {
+    padding: 1em 1.5em;
+    margin-right: 1.071em
+}
+input[type=submit] {
+    -webkit-appearance: none;
+    border-radius: 0
+}
+.button,
+a.button,
+.button a {
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none
+}
+.button:hover,
+a.button:hover,
+.button a:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.button.minor,
+a.button.minor,
+.button.minor a,
+.button-minor,
+input[type=submit].button-minor {
+    background-color: #eee;
+    color: #0066a9
+}
+.button.minor:hover,
+a.button.minor:hover,
+.button.minor a:hover,
+.button-minor:hover,
+input[type=submit].button-minor:hover {
+    background-color: #eee;
+    text-decoration: underline
+}
+.disabled,
+a.disabled,
+.disabled>button,
+.button.disabled {
+    background-color: #eee;
+    color: #0066a9;
+    color: #242424
+}
+.disabled:hover,
+a.disabled:hover,
+.disabled>button:hover,
+.button.disabled:hover {
+    background-color: #eee;
+    text-decoration: underline
+}
+.disabled:hover,
+a.disabled:hover,
+.disabled>button:hover,
+.button.disabled:hover {
+    background-color: #eee;
+    text-decoration: none;
+    cursor: text
+}
+.button.theme,
+a.button.theme,
+.button.theme a {
+    background-color: #000;
+    color: #fff
+}
+.button.theme:hover,
+a.button.theme:hover,
+.button.theme a:hover {
+    background-color: #242424
+}
+.button:focus,
+.button a:focus {
+    outline: 1px dotted #32659c
+}
+.button-icon-bg-norepeat {
+    background-repeat: no-repeat
+}
+.button-icon-bg {
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 46px
+}
+.button-icon-bg-icononly {
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-right: 15px;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em
+}
+.button-icon-bg-30 {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 30px 30px;
+    display: block
+}
+.button-icon-bg-30 .icon-text {
+    padding-top: 30px;
+    text-align: center
+}
+.button-icon-bg-44 {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 44px 44px;
+    display: block;
+    height: 44px;
+    width: 44px
+}
+.button.delete-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0
+}
+.button-block {
+    float: right
+}
+.button-block a,
+.button-block .split-button,
+.button-block .hasSecondary,
+.button-block button {
+    margin-right: 1px
+}
+.button-block a,
+.button-block .split-button,
+.button-block .hasSecondary {
+    float: left
+}
+.split-button,
+.hasSecondary {
+    background-color: #264c75
+}
+.skip-button,
+.skip-button button,
+input[type=submit].skip-button {
+    background-color: transparent;
+    color: #0066a9;
+    padding: 0
+}
+.button-close button {
+    float: right;
+    clear: both;
+    display: inline-block;
+    background-image: url(images/button-close.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    padding-right: 45px
+}
+.button-close.button-close-icon-only span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.button-close.button-close-icon-only button {
+    height: 44px;
+    width: 44px;
+    padding: 0
+}
+.button-open-new-window a {
+    background-image: url(images/open-in-new-window-icon.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    font-size: 12px;
+    font-size: 1.2rem;
+    padding-right: 2em;
+    padding-top: .5em;
+    margin-right: 1em;
+    clear: both;
+    display: inline-block
+}
+.button-remove,
+.button.button-remove {
+    background: #a52e29;
+    background-image: url(images/button-delete.png);
+    color: #fff
+}
+.button-remove:hover,
+.button.button-remove:hover {
+    background-color: #8e2825
+}
+.button-success,
+.button.button-success {
+    background: #167445;
+    background-image: url(images/all-approve-small-white.png);
+    color: #fff
+}
+.button-success:hover,
+.button.button-success:hover {
+    background-color: #125e38
+}
+.button-remove,
+.button.button-remove,
+.button-success,
+.button.button-success {
+    margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1em;
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.button-remove.disabled,
+.button.button-remove.disabled,
+.button-success.disabled,
+.button.button-success.disabled {
+    background-color: #eee;
+    color: #000
+}
+.svg .button-success,
+.svg .button.button-success {
+    background-image: url(images/all-approve-white.svg);
+    background-size: 19px 16px
+}
+.btn-full-width button,
+.btn-full-width .button,
+.btn-full-width .button a {
+    width: 100%;
+    text-align: center
+}
+.inline-buttons input[type=submit] {
+    display: inline-block
+}
+.button-toggle {
+    width: 92px;
+    height: 48px;
+    display: -webkit-flex;
+    display: flex;
+    border: 2px solid #343434
+}
+.button-toggle button {
+    width: 44px;
+    height: 44px;
+    background-color: #000;
+    background-position: center center
+}
+.button-toggle button.active {
+    background-color: #eee;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    color: #242424;
+    -webkit-transition: border-bottom .5s;
+    -moz-transition: border-bottom .5s;
+    -ms-transition: border-bottom .5s;
+    -o-transition: border-bottom .5s;
+    transition: border-bottom .5s
+}
+.hide-inner span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.icon-right {
+    position: absolute;
+    right: 1em;
+    top: 1em
+}
+@media only screen and (max-width: 640px) {
+    .button-block {
+        float: left
+    }
+    .button-block a,
+    .button-block button {
+        margin: 0 1px 1px 0
+    }
+}
+.pager>span,
+.pager>a,
+.pager-responsive a,
+.pager-responsive button,
+.pager .current {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none
+}
+.pager>span:hover,
+.pager>a:hover,
+.pager-responsive a:hover,
+.pager-responsive button:hover,
+.pager .current:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.pager-responsive a,
+.pager-responsive button {
+    padding: 1em 1.5em;
+    margin-right: .5em
+}
+.pager-responsive .pager-fields-with-label label {
+    display: inline-block;
+    float: left;
+    margin-right: .5em
+}
+@media only screen and (max-width: 640px) {
+    .pager-responsive .pager-fields-with-label label {
+        float: none
+    }
+}
+.pager-responsive .align-right {
+    float: left;
+    margin-top: .5em
+}
+.pager-responsive span a,
+.pager-responsive>span,
+.pager-responsive span a:hover,
+.pager-responsive .pageButton,
+.pager-responsive .table-page-button {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 44px;
+    width: 44px
+}
+.pager-responsive span a span,
+.pager-responsive>span span,
+.pager-responsive span a:hover span,
+.pager-responsive .pageButton span,
+.pager-responsive .table-page-button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.pager-responsive .pageButton:hover,
+.pager-responsive .table-page-button:hover {
+    background-color: #f5f6f6
+}
+.pager-responsive .disabled,
+.pager-responsive .disabled a,
+.pager-responsive .pageButton.disabled {
+    background-color: #fff;
+    box-shadow: inset 0 0 1px #ccc
+}
+.pager-responsive .disabled:hover,
+.pager-responsive .disabled a:hover,
+.pager-responsive .pageButton.disabled:hover {
+    background-color: #fff
+}
+.pager-responsive .disabled:focus,
+.pager-responsive .disabled a:focus,
+.pager-responsive .pageButton.disabled:focus {
+    outline: none;
+    border: none
+}
+.pager-responsive .dataGridFirstPage a,
+.pager-responsive .firstPageButton {
+    background-image: url('images/first-icon.png')
+}
+.pager-responsive .dataGridLastPage a,
+.pager-responsive .LastPageButton {
+    background-image: url('images/last-icon.png')
+}
+.pager-responsive .dataGridPreviousPage a,
+.pager-responsive .previousPageButton {
+    background-image: url('images/arrowleftblue.png')
+}
+.pager-responsive .dataGridNextPage a,
+.pager-responsive .nextPageButton {
+    background-image: url('images/arrowrightblue.png')
+}
+.pager-responsive .table-page-button {
+    float: left;
+    margin-right: .5em
+}
+.pager-responsive .pager-info {
+    float: left;
+    line-height: 44px
+}
+.pager-responsive .showAllPageButton,
+.pager-responsive .showPagedPageButton {
+    width: auto
+}
+.pager-responsive .showAllPageButton span,
+.pager-responsive .showPagedPageButton span {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow: visible
+}
+.pager {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1
+}
+.pager>a,
+.pager-responsive a,
+.pager-responsive button {
+    background-color: #eee;
+    color: #0066a9
+}
+.pager>a:hover,
+.pager-responsive a:hover,
+.pager-responsive button:hover {
+    background-color: #eee;
+    text-decoration: underline
+}
+.pager>span,
+.pager>a {
+    margin: 0;
+    float: left;
+    padding: 0.2em 0.5em
+}
+.pager+* {
+    clear: both;
+    margin-top: 1em;
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1
+}
+.pager-responsive {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    align-items: center
+}
+.pager-responsive>* {
+    padding-right: 1em
+}
+.pager-responsive .pager-fields-with-label .fieldItem {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row
+}
+.pager-responsive .pager-fields-with-label .fieldItem>* {
+    padding-right: 1em
+}
+.pager-responsive button {
+    margin-top: 0
+}
+.pager-responsive .pager-fields {
+    -webkit-flex-grow: 1;
+    flex-grow: 1
+}
+.pager-responsive .pager-fields select {
+    width: auto;
+    height: 44px;
+    min-width: 70px
+}
+.pager-responsive .pager-info {
+    margin-right: .5em
+}
+.pager-responsive>div,
+.pager-responsive>span {
+    margin-top: .5em;
+    margin-bottom: .5em
+}
+.pager-responsive.pager-responsive-list div {
+    clear: both
+}
+@media only screen and (max-width: 640px) {
+    .pager-responsive.pager-responsive-list {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        clear: both
+    }
+    .pager-responsive.pager-responsive-list>* {
+        padding-right: 1em
+    }
+}
+.no-flexbox .pager-responsive>div,
+.no-flexbox .pager-responsive>span {
+    display: inline-block
+}
+.form-container {
+    width: 100%;
+    background-color: #f5f6f6;
+    color: #000;
+    padding: 1em
+}
+.no-boxsizing .form-container {
+    width: 95%
+}
+.form-container legend {
+    color: #0066a9
+}
+.form-container ul {
+    margin: 0;
+    padding: 0
+}
+.form-container li,
+.form-container div.section {
+    clear: both
+}
+.form-container .half {
+    width: 50%;
+    margin-right: 0;
+    float: left
+}
+fieldset,
+fieldset.half {
+    border: none;
+    margin-top: .5em;
+    padding-bottom: 2em
+}
+fieldset fieldset {
+    border: 1px solid #eee;
+    width: 75%;
+    margin: 1em 0 0 0
+}
+fieldset,
+.leftPanel fieldset {
+    padding: 0
+}
+.form-container fieldset {
+    padding: 0.35em 0.625em 0.75em
+}
+.no-boxsizing .form-container fieldset {
+    padding-left: 0;
+    padding-right: 0
+}
+legend {
+    width: 100%;
+    font-size: 25px;
+    font-size: 2.5rem;
+    margin-bottom: 1em
+}
+fieldset fieldset>legend {
+    font-size: 15px;
+    font-size: 1.5rem;
+    width: auto;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin-bottom: 0
+}
+label,
+.label {
+    display: block;
+    margin: 1em 0 0.5em 0
+}
+.inline-input {
+    display: inline;
+    float: left;
+    margin-right: 1em
+}
+input[type=submit].inline-button,
+input[type=button].inline-button,
+button.inline-button {
+    display: inline-block
+}
+input,
+input[type="search"],
+textarea,
+button,
+.input-box {
+    width: 75%;
+    padding: 10px;
+    border-radius: 0;
+    border: 2px solid #eee;
+    box-shadow: inset 2px 2px 2px 0 #ccc;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+.no-boxsizing input,
+.no-boxsizing input[type="search"] {
+    width: 63%
+}
+input[type=file] {
+    background: #fff
+}
+select {
+    width: 75%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ccc #eee #eee #ccc;
+    padding: 8px;
+    background: #fff
+}
+optgroup {
+    background: #f5f6f6;
+    font-weight: normal
+}
+input[list] {
+    background: #fff url(images/filter-menu.png) right 10px center no-repeat
+}
+input[list]::-webkit-calendar-picker-indicator {
+    color: rgba(255, 255, 255, 0);
+    background: #fff url(images/filter-menu.png) center center no-repeat
+}
+.no-inputlist input[list] {
+    display: none
+}
+input:focus,
+select:focus,
+textarea:focus,
+.input-box:focus {
+    border: 2px solid #32659c;
+    outline: 0
+}
+input[readonly],
+select[readonly],
+textarea[readonly],
+.input-box[readonly] {
+    background-color: #f5f6f6;
+    color: #666
+}
+input[readonly]:focus,
+select[readonly]:focus,
+textarea[readonly]:focus,
+.input-box[readonly]:focus {
+    border-color: #f5f6f6
+}
+.error-text,
+.errorItem {
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    background: url('images/forms-error.png') no-repeat 0 2px;
+    color: #ca322a;
+    padding-left: 18px
+}
+.noticeHeader {
+    font-size: 18px;
+    font-size: 1.8rem
+}
+.notice-success .noticeItem,
+.notice-failure {
+    background: #f5f6f6;
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 74.5%;
+    margin-top: .5em
+}
+.notice-success .noticeItem.np,
+.notice-failure.np {
+    padding: 0
+}
+.notice-failure .noticeItem {
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    background: url('images/forms-error.png') no-repeat 0 2px;
+    color: #ca322a;
+    padding-left: 18px
+}
+.notice-success .noticeItem:before {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 30px 30px;
+    display: block;
+    background-color: #167445;
+    float: left;
+    background-image: url(images/all-success-30-white.png);
+    background-position: center center;
+    content: " ";
+    height: 30px;
+    width: 30px;
+    background-size: 25px 25px
+}
+.notice-success .noticeItem:before .icon-text {
+    padding-top: 30px;
+    text-align: center
+}
+.notice-success .noticeItem .noticeHeader,
+.notice-success .noticeItem .noticeMessage {
+    margin-left: 44px
+}
+.svg .notice-success .noticeItem:before {
+    background-image: url(images/all-success-white.svg)
+}
+fieldset fieldset .error-text {
+    margin-left: .5em
+}
+input.error,
+select.error,
+textarea.error {
+    border: 2px solid #ca322a
+}
+.further-instructions {
+    position: relative;
+    top: 8px;
+    border: none;
+    clear: both;
+    width: 90%;
+    font-size: 11px;
+    line-height: 14px
+}
+input[type="submit"],
+input[type="button"],
+button {
+    border: none;
+    width: auto;
+    box-shadow: none;
+    background-color: #32659c;
+    color: #fff;
+    clear: both;
+    margin-top: 1em;
+    display: block
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+    text-decoration: underline
+}
+.separate-field {
+    width: 40%;
+    float: left;
+    min-width: 88px
+}
+.no-boxsizing .separate-field {
+    height: 40px
+}
+input[type="checkbox"],
+input[type="radio"],
+.checkbox-hidden-sim {
+    padding: 0;
+    width: 18px;
+    height: 12px;
+    clear: both;
+    float: left;
+    margin: 1.2em 0 0 0.5em !important;
+    box-shadow: none;
+    border: none
+}
+input[type="radio"] {
+    padding-left: 0.5em
+}
+input[type="checkbox"]+label,
+input[type="radio"]+label,
+.checkbox-sim {
+    position: relative;
+    float: left;
+    box-sizing: border-box !important;
+    padding-left: 10px;
+    margin-bottom: 1em;
+    width: 60%;
+    width: -moz-calc(90% - 29px);
+    width: -webkit-calc(90% - 29px);
+    width: calc(90% - 29px)
+}
+input[type="checkbox"]+label::before,
+input[type="radio"]+label::before,
+.checkbox-sim::before {
+    position: absolute;
+    left: -27px;
+    top: -1px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    background: #fff;
+    content: " ";
+    cursor: pointer;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 10px;
+    vertical-align: top;
+    color: #0066a9;
+    box-shadow: inset 0 0 2px #ccc;
+    text-shadow: 0 -1px #ccc, 0 1px #242424;
+    margin-left: 0.5em
+}
+.separate-field input[type="checkbox"]+label,
+.separate-field input[type="radio"]+label {
+    width: 50%
+}
+input[type="checkbox"][readonly]+label::before,
+input[type="radio"][readonly]+label::before {
+    background-color: #f5f6f6
+}
+input[type="checkbox"][readonly]+label,
+input[type="radio"][readonly]+label {
+    color: #666;
+    font-style: italic
+}
+.separate-field input[type='checkbox']+label::before {
+    padding: 3.5px
+}
+input[type="radio"]+label:before {
+    border-radius: 100%;
+    padding: 3px 4px 5px 4px
+}
+input[type="checkbox"]:checked+label::before {
+    content: "\2713"
+}
+input[type="radio"]:checked+label::before {
+    content: "\25cf"
+}
+input[type="checkbox"]:focus+label::before,
+input[type="radio"]:focus+label::before,
+input[type=submit]:focus,
+input[type=button]:focus button:focus {
+    outline: 1px dotted #32659c;
+    text-decoration: none
+}
+input[type="checkbox"]:focus+label,
+input[type="radio"]:focus+label {
+    text-decoration: underline
+}
+input[type="checkbox"]+label+label,
+input[type="radio"]+label+label {
+    clear: both
+}
+.separate-field {
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    display: inline-block
+}
+.date .third {
+    margin-right: 0
+}
+.search-field input {
+    float: left;
+    clear: none
+}
+.search-field input[type=text],
+.search-field input[type=search] {
+    width: -moz-calc(75% - 67px);
+    width: -webkit-calc(75% - 67px);
+    width: calc(75% - 67px)
+}
+@media only screen and (max-width: 640px) {
+    .search-field input[type=text],
+    .search-field input[type=search] {
+        width: -moz-calc(100% - 67px);
+        width: -webkit-calc(100% - 67px);
+        width: calc(100% - 67px)
+    }
+}
+.search-field .search-button {
+    margin: 0;
+    min-height: 41px
+}
+.generatedcontent .required:after,
+.asterisk-required {
+    color: #ca322a;
+    content: ' *'
+}
+.generatedcontent .required-label,
+.generatedcontent .fieldHeaderIsRequired {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.file-drop-box {
+    height: 100px;
+    border: 1px solid #eee;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 40px;
+    background: #f5f6f6
+}
+fieldset.dropdown-check {
+    border: 1px solid #eee;
+    margin: 10px 2% 0.5em 0;
+    background: #fff
+}
+fieldset.dropdown-check legend {
+    width: 100%;
+    float: left;
+    padding: 10px
+}
+fieldset.dropdown-check .checkbox-list {
+    display: none;
+    clear: both;
+    padding: 10px
+}
+@media only screen and (max-width: 640px) {
+    fieldset fieldset,
+    input,
+    select,
+    textarea,
+    .separate-field {
+        width: 100%
+    }
+    fieldset fieldset .no-boxsizing,
+    input .no-boxsizing,
+    select .no-boxsizing,
+    textarea .no-boxsizing,
+    .separate-field .no-boxsizing {
+        width: 96%
+    }
+    .inline-input {
+        display: block;
+        float: none;
+        margin-right: 0
+    }
+    .date .third {
+        margin-bottom: 0;
+        padding: 5px;
+        float: left;
+        width: 32%
+    }
+}
+.accordion {
+    height: auto;
+    border-top: 1px solid #ccc;
+    list-style: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em
+}
+.no-boxsizing .accordion {
+    border-right: 1px solid #ccc
+}
+.no-boxsizing .accordion .accordion {
+    border-right: none
+}
+.accordion .panel {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+    width: 100%;
+    height: auto;
+    background: #f5f6f6;
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+}
+.accordion .accordion {
+    margin: 0
+}
+.accordion .accordion .panel {
+    border-left: none;
+    border-right: none;
+    background: none
+}
+.accordion>.open,
+.acc-panel.open {
+    background: none
+}
+.accTitle {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    font-weight: normal
+}
+.accTitle>a,
+.accTitle>.acc-link {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 12px 10% 12px 4%;
+    background: url('images/accordionclosed.png') no-repeat 96% center;
+    text-decoration: none
+}
+.accTitle>a:hover *,
+.accTitle>.acc-link:hover * {
+    text-decoration: underline !important
+}
+.bodyCopy .accTitle {
+    font-weight: normal
+}
+.no-boxsizing .accTitle>a,
+.no-boxsizing .accTitle>.acc-link {
+    width: 86%
+}
+.accMulti .accordion .accTitle {
+    font-weight: normal;
+    background: url('images/bullet.png') no-repeat 4% 50%
+}
+.accMulti .accContent .accTitle>a,
+.accMulti .accContent .accTitle>.acc-link {
+    padding-left: 6%
+}
+.no-boxsizing .accMulti .accContent .accTitle>a,
+.no-boxsizing .accMulti .accContent .accTitle>.acc-link {
+    width: 84%
+}
+.accordion>.open>.accTitle>a,
+.accordion>.open>.accTitle>.acc-link,
+.accordion-open-icon {
+    background-image: url('images/accordionopen.png')
+}
+.accContent {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 10px 4% 20px
+}
+.no-boxsizing .accContent {
+    width: 92%
+}
+.accMulti>.accContent {
+    width: 100%;
+    padding: 0
+}
+.accMulti .accordion .accContent {
+    padding-left: 6%
+}
+.no-boxsizing .accMulti .accordion .accContent {
+    width: 90%
+}
+.no-js .panel,
+.no-js .accTitle>a {
+    background: none
+}
+.accTitle .align-left {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 49%;
+    margin-bottom: 0;
+    padding-left: 0
+}
+.accTitle .align-left.np {
+    padding: 0
+}
+.accTitle .align-left:last-of-type {
+    margin-right: 0
+}
+.search-results {
+    margin-bottom: .5em
+}
+.search-results ul {
+    list-style: none
+}
+.search-results .listItemDetails,
+.search-results .three-quarters,
+.search-results .quarter {
+    margin-bottom: 0
+}
+.search-results.compact h2,
+.search-results.compact h3,
+.search-results.compact h4 {
+    color: #0066a9
+}
+.search-results.compact h2 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    margin-bottom: 0
+}
+.search-results.compact h3 {
+    font-size: 16px;
+    font-size: 1.6rem;
+    margin-top: .5em;
+    margin-bottom: .5em
+}
+.search-results.compact h4 {
+    margin: 0;
+    font-weight: normal
+}
+.search-results.compact ul {
+    padding-left: 0;
+    margin-top: 0
+}
+.add-table {
+    padding: 0
+}
+.add-table button {
+    margin: 0
+}
+.search-results>a,
+.search-results .listItem,
+.search-results .list-row {
+    text-decoration: none;
+    display: block;
+    background-color: #eee;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    color: inherit;
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1
+}
+.search-results>a .nmb,
+.search-results .listItem .nmb,
+.search-results .list-row .nmb {
+    margin-bottom: 0
+}
+.search-results>a:hover,
+.search-results .link-block:hover {
+    background-color: #f5f6f6
+}
+.search-results .link-block.disabled:hover {
+    background-color: #eee
+}
+.search-results .add,
+.search-results .remove {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 23.5%;
+    text-align: center;
+    margin-bottom: 0;
+    min-height: 80px;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+    clear: none
+}
+.search-results .add.np,
+.search-results .remove.np {
+    padding: 0
+}
+.search-results .add:last-of-type,
+.search-results .remove:last-of-type {
+    margin-right: 0
+}
+.search-results .add>span,
+.search-results .remove>span,
+.search-results .add .button-content,
+.search-results .remove .button-content {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%
+}
+@media only screen and (max-width: 640px) {
+    .search-results .add,
+    .search-results .remove {
+        font-size: 12px;
+        font-size: 1.2rem;
+        font-weight: normal
+    }
+}
+.search-results .add {
+    background-image: url('images/add.png')
+}
+.search-results .remove {
+    background-image: url('images/remove.png')
+}
+.dark .add,
+.dark .remove,
+.dark a {
+    background-color: #32659c;
+    color: #fff
+}
+.dark .add:hover,
+.dark .remove:hover,
+.dark a:hover {
+    background-color: #0066a9
+}
+.hide-no-items.hasNoItems {
+    display: none
+}
+.list-choice-button button,
+.list-choice-button .sim-button {
+    float: right;
+    margin: 0
+}
+.list-choice-button button {
+    background-color: #eee;
+    color: #0066a9
+}
+.list-choice-button button:hover {
+    background-color: #eee;
+    text-decoration: underline
+}
+.list-choice-button .sim-button {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0
+}
+.list-choice-button .sim-button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.list-choice-button .sim-button.minor {
+    background-color: #eee;
+    color: #0066a9
+}
+.list-choice-button .sim-button.minor:hover {
+    background-color: #eee;
+    text-decoration: underline
+}
+.list-choice-button .sim-button.minor:hover {
+    background-color: #f5f6f6
+}
+.list-with-action-icon {
+    position: relative
+}
+.list-with-action-icon .list-with-action {
+    width: -moz-calc(100% - 50px);
+    width: -webkit-calc(100% - 50px);
+    width: calc(100% - 50px)
+}
+.list-with-action-icon .list-action-icon {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    clear: none;
+    right: 0;
+    top: 0;
+    margin: 0
+}
+.modal-dialog-page-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80)
+}
+.modal-dialog-inner {
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    max-height: 70%;
+    background-color: white;
+    border: 10px solid #000;
+    z-index: 1002;
+    overflow: auto
+}
+.modal-dialog-inner button {
+    margin-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1.5em
+}
+.modal-dialog-inner .full {
+    padding: 0
+}
+.modal-dialog-inner>div.full {
+    margin-bottom: 0
+}
+.modal-dialog-inner .button-open-new-window a {
+    float: right;
+    text-align: right
+}
+@media only screen and (max-width: 960px) {
+    .modal-dialog-inner {
+        display: none;
+        position: fixed;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        max-height: 90%;
+        background-color: white;
+        border: 10px solid #000;
+        z-index: 1002;
+        overflow: auto
+    }
+}
+.modal-dialog-contents {
+    padding-left: 1em;
+    padding-right: 1em
+}
+.modal-dialog-contents h3 {
+    clear: both
+}
+.modal-dialog-header {
+    background: #f5f6f6;
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+    padding-top: .5em
+}
+.modal-dialog-header h2 {
+    display: block;
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 66%;
+    padding-left: .5em;
+    -webkit-margin-before: .8em;
+    padding-top: 0;
+    font-size: 30px;
+    font-size: 3.0rem
+}
+.modal-dialog-header h2.np {
+    padding: 0
+}
+.modal-dialog-header .modal-controls {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 32%;
+    padding: 0
+}
+.modal-dialog-header .modal-controls.np {
+    padding: 0
+}
+.modal-dialog-header .modal-controls:last-of-type {
+    margin-right: 0
+}
+.no-lastchild .modal-dialog-header h2 {
+    width: 64%
+}
+.no-lastchild .modal-dialog-header .modal-controls {
+    width: 31.3%
+}
+.no-boxsizing .modal-dialog-header h2 {
+    width: 62%
+}
+.no-boxsizing .modal-dialog-header .modal-controls {
+    width: 29%
+}
+.modal-dialog-footer {
+    background: #f5f6f6;
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+    padding-top: .5em;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    clear: both
+}
+.event-notifications {
+    position: fixed;
+    left: 25%;
+    top: 0;
+    color: white;
+    z-index: 4;
+    padding: 1em;
+    width: 50%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-position: center right 20px;
+    background-image: url("images/button-close.png");
+    background-repeat: no-repeat
+}
+@media only screen and (max-width: 640px) {
+    .event-notifications {
+        left: 5%;
+        width: 90%;
+        background-position: center right 5px
+    }
+}
+.event-notifications .event-notification-text {
+    width: 100%;
+    padding-right: 64px
+}
+@media only screen and (max-width: 640px) {
+    .event-notifications .event-notification-text {
+        padding-right: 49px
+    }
+}
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 100px;
+    height: 0;
+    overflow: hidden;
+    top: -10px
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+.embed-container.embed-content {
+    top: 0
+}
+body,
+.bg-dark {
+    background: #242424
+}
+.bg-brand {
+    background: #32659c
+}
+.bg-error {
+    background: #ca322a
+}
+.bg-dark,
+.bg-brand,
+.bg-error {
+    color: #fff
+}
+.bg-dark a,
+.bg-brand a,
+.bg-error a {
+    color: #fff
+}
+.page {
+    background: #fff
+}
+.bg-light {
+    background: #fff;
+    color: #000
+}
+.bg-light a {
+    color: #0066a9
+}
+.bg-bone,
+.bone-bg {
+    background: #f5f6f6
+}
+header {
+    background: #ff5555
+}
+.monash-brandheader.half {
+    padding-right: 0
+}
+.svg .monash-brandheader a {
+    background-image: url(images/monash-logo-1-line-white.svg)
+}
+.monash-brandheader a {
+    background-image: url(images/monash-logo-1-line-white.png);
+    margin-right: 0;
+    float: right
+}
+header h1 {
+    padding-top: 14px
+}
+header h1 a {
+    color: #fff
+}
+@media only screen and (max-width: 960px) {
+    .svg .monash-brandheader {
+        padding-top: 1em;
+        padding-bottom: 1em
+    }
+    .svg .monash-brandheader a {
+        background-image: url(images/monash-logo-2-lines-white.svg);
+        padding-top: 1em;
+        padding-bottom: 1em
+    }
+    .monash-brandheader a {
+        background-image: url(images/monash-logo-2-lines-white.png)
+    }
+}
+@media only screen and (max-width: 640px) {
+    .svg .monash-brandheader {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden
+    }
+    header h1 {
+        padding-top: 0
+    }
+}
+.page {
+    min-height: 500px
+}
+@media only screen and (max-width: 640px) {
+    .page {
+        min-height: auto
+    }
+}
+input[type="submit"],
+input[type="button"],
+button {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0
+}
+#ajax-loader {
+    display: none
+}
+.icon-loader {
+    z-index: 2000
+}
+.cke {
+    clear: both;
+    margin-top: .5em !important;
+    margin-bottom: .5em !important
+}
+.cke_button__ugssymbolbutton_icon {
+    background-image: url(images/ugm-ckeditor-user-field.png) !important;
+    background-repeat: no-repeat;
+    background-position: 6px 6px
+}
+.cke_button__ugssymbollookupbutton_icon {
+    background-image: url(images/ugm-ckeditor-lookup-field.png) !important;
+    background-repeat: no-repeat;
+    background-position: 6px 6px
+}
+input.cke_dialog_ui_checkbox_input {
+    margin: 0!important
+}
+.applicationName {
+    display: block;
+    background-image: url(images/ugm-logo.png);
+    background-repeat: no-repeat;
+    height: 69px
+}
+.svg .applicationName {
+    background-image: url(images/ugm-logo.svg);
+    background-size: 159px 100%
+}
+.breadcrumbs {
+    clear: both;
+    padding-bottom: 1em
+}
+.breadCrumbItem {
+    padding-right: .5em;
+    margin-right: .5em;
+    border-right: 1px solid #fff
+}
+.breadCrumbItem:link,
+.breadCrumbItem:visited {
+    color: #fff;
+    text-decoration: none
+}
+.breadCrumbItem:hover {
+    color: #fff;
+    text-decoration: underline
+}
+.breadCrumbItem:active {
+    color: #eee;
+    text-decoration: underline
+}
+button {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none
+}
+button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.button-icon-bg-norepeat {
+    background-repeat: no-repeat
+}
+.button-icon-bg {
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.button-icon-bg-icononly {
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-right: 2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em
+}
+.button-field>button {
+    background-color: #eee;
+    color: #0066a9;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border: 0 solid #000
+}
+.button-field>button:hover {
+    background-color: #eee;
+    text-decoration: underline
+}
+.field-parent-button {
+    padding-left: 46px !important;
+    background-repeat: no-repeat !important;
+    background-position: 15px center !important;
+    padding-left: 3em !important;
+    background-image: url(images/ugm-nested-field-small-black.png);
+    background-size: 20px 20px
+}
+.svg .field-parent-button {
+    background-image: url(images/ugm-nested-field-black.svg)
+}
+.button-icon-bg-icononly-pm {
+    padding-left: 1em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+    background-repeat: no-repeat
+}
+.button-icon-bg-icononly-nohover {
+    background-color: #fff;
+    border: 1px solid #fff
+}
+.bg-size-20w-20h {
+    background-size: 20px 20px
+}
+.bg-center {
+    background-position: center center
+}
+.size-55w-55h {
+    height: 55px;
+    width: 55px
+}
+.size-50w-50h {
+    height: 50px;
+    width: 50px
+}
+.size-44w-44h {
+    height: 44px;
+    width: 44px
+}
+.button-add button,
+div.addBlock>button,
+span.addField>button,
+button.fieldAddNewAnswer,
+.fieldAddNewAnswer button,
+#addEmailTemplate button,
+.addAttachRule button,
+.fieldAddOptionButton button,
+button.addField {
+    background-image: url(images/ugm-add-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 20px 20px
+}
+.svg .button-add button,
+.svg div.addBlock>button,
+.svg span.addField>button,
+.svg button.fieldAddNewAnswer,
+.svg .fieldAddNewAnswer button,
+.svg #addEmailTemplate button,
+.svg .addAttachRule button {
+    background-image: url(images/ugm-add-white.svg)
+}
+.button-approve button,
+.approveStatus button {
+    background-image: url(images/ugm-approve-small-white.png);
+    background-size: 20px 20px;
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.svg .button-approve button,
+.svg .approveStatus button {
+    background-image: url(images/ugm-approve-white.svg)
+}
+.unApproveStatus button {
+    background-image: url(images/ugm-unapprove-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 20px 20px
+}
+.svg .unApproveStatus button {
+    background-image: url(images/ugm-unapprove-small-white.png)
+}
+.nodeaction_attach_as_child button,
+.nodeaction_attach_as_parent button {
+    background-image: url(images/ugm-attach-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 20px 20px
+}
+.svg .nodeaction_attach_as_child button,
+.svg .nodeaction_attach_as_parent button {
+    background-image: url(images/ugm-attach-white.svg)
+}
+.button-detach button {
+    background-image: url(images/ugm-detach-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.svg .button-detach button {
+    background-image: url(images/ugm-detach-small-white.png)
+}
+.nodeaction_swap button {
+    background-image: url(images/ugm-swap-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 23px 20px
+}
+.svg .nodeaction_swap button {
+    background-image: url(images/ugm-swap-small-white.png)
+}
+.button-delete button {
+    background-image: url(images/ugm-trash-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 20px 20px
+}
+.svg .button-delete button {
+    background-image: url(images/ugm-trash-white.svg)
+}
+.remove-button {
+    background: #a52e29;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1em;
+    background-image: url(images/ugm-trash-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 17px 20px;
+    color: #fff
+}
+.remove-button:hover {
+    background-color: #8e2825
+}
+.svg .remove-button,
+.svg .remove-button button,
+.svg .removeOptionButton button,
+.svg button.remove-button-alignright,
+.svg .remove-button-alignright button,
+.svg .fieldRemoveAnswer button,
+.svg .emailTriggerRemove button,
+.svg .removeAttachRule button,
+.svg .removeAuthorization button {
+    background-image: url(images/ugm-trash-white.svg)
+}
+.remove-button button,
+.removeOptionButton button,
+button.remove-button-alignright,
+.remove-button-alignright button,
+.fieldRemoveAnswer button {
+    clear: both;
+    background: #a52e29;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1em;
+    background-image: url(images/ugm-trash-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 17px 20px;
+    color: #fff
+}
+.remove-button button:hover,
+.removeOptionButton button:hover,
+button.remove-button-alignright:hover,
+.remove-button-alignright button:hover,
+.fieldRemoveAnswer button:hover {
+    background-color: #8e2825
+}
+.button-edit button {
+    background-image: url(images/ugm-edit-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 19px 20px
+}
+.svg .button-edit button {
+    background-image: url(images/ugm-edit-white.svg)
+}
+.action_Edit button {
+    background-image: url(images/ugm-edit-small-black.png);
+    background-color: #fff;
+    border: 1px solid #fff;
+    background-position: .5em center;
+    padding-left: 1em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+    background-repeat: no-repeat
+}
+.svg .action_Edit button {
+    background-image: url(images/ugm-edit-black.svg)
+}
+.filter-button button {
+    background-image: url(images/ugm-filter-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 20px 23px
+}
+.svg .filter-button button {
+    background-image: url(images/ugm-filter-white.svg)
+}
+.submitStatus button {
+    background-image: url(images/ugm-submit-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 19px 20px
+}
+.svg .submitStatus button {
+    background-image: url(images/ugm-submit-white.svg)
+}
+.onHoldStatus button {
+    background-image: url(images/ugm-wait-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 15px 20px
+}
+.svg .onHoldStatus button {
+    background-image: url(images/ugm-wait-white.svg)
+}
+.unHoldStatus button {
+    background-image: url(images/ugm-no-wait-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 25px 20px
+}
+.svg .unHoldStatus button {
+    background-image: url(images/ugm-no-wait-white.svg)
+}
+.cancelStatus button {
+    background-image: url(images/ugm-unapprove-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 20px 20px
+}
+.svg .cancelStatus button {
+    background-image: url(images/ugm-unapprove-white.svg)
+}
+.confirmationTemplateYes button {
+    background-image: url(images/ugm-yes-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 20px 15px;
+    background-color: #a52e29
+}
+.confirmationTemplateYes button:hover {
+    background-color: #8e2825
+}
+.svg .confirmationTemplateYes button {
+    background-image: url(images/ugm-yes-white.svg)
+}
+.confirmationTemplateNo button {
+    background-image: url(images/ugm-no-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 15px 15px
+}
+.svg .confirmationTemplateNo button {
+    background-image: url(images/ugm-no-white.svg)
+}
+.auditBlock button,
+.auditField button {
+    background-image: url(images/ugm-history-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 25px 23px
+}
+.svg .auditBlock button,
+.svg .auditField button {
+    background-image: url(images/ugm-history-white.svg)
+}
+.searchButton button,
+.modalDialogContents button.searchForPerson {
+    background-image: url(images/ugm-search-small-white.png);
+    background-size: 20px 20px;
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.svg .searchButton button,
+.svg .modalDialogContents button.searchForPerson {
+    background-image: url(images/ugm-search-white.svg)
+}
+.edit-entity-accordion div.person {
+    float: left;
+    padding: .8em;
+    margin: 0;
+    max-width: 85%;
+    min-height: 44px;
+    background-color: #f5f6f6;
+    font-weight: bold
+}
+.edit-entity-accordion div.person::before {
+    font-weight: normal;
+    content: "Person:"
+}
+.searchForPerson {
+    display: block
+}
+.person-search-container .omnibox {
+    float: left;
+    width: 75%
+}
+.person-search-container .omnibox input {
+    width: 99%;
+    height: 3em
+}
+.person-search-container .searchButton {
+    float: left;
+    width: 25%;
+    margin-top: 1.7em
+}
+.person-search-container .searchButton button {
+    height: 3em;
+    width: 3em;
+    padding: 0;
+    background-position: center center
+}
+.person-search-container .searchButton button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.person-search-container .searchButton .button,
+.searchForPerson .clearButton button,
+.field-container-content button.searchForPerson {
+    background-image: url(images/ugm-add-small-white.png);
+    background-size: 20px 20px;
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.svg .person-search-container .searchButton .button,
+.svg .searchForPerson .clearButton button,
+.svg .field-container-content button.searchForPerson {
+    background-image: url(images/ugm-add-white.svg)
+}
+.searchForPerson .clearButton {
+    float: left;
+    clear: both
+}
+button.erin-person-button.searchForPerson {
+    background-image: url(images/ugm-edit-text-big-white.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    background-size: 23px 34px
+}
+button.erin-person-button.searchForPerson span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.svg button.erin-person-button.searchForPerson {
+    background-image: url(images/ugm-edit-text-white.svg)
+}
+.button-hide button {
+    background-image: url(images/ugm-hide-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.svg .button-hide button {
+    background-image: url(images/ugm-hide-white.svg)
+}
+.button-move button {
+    background-image: url(images/ugm-toolbar-move-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.svg .button-move button {
+    background-image: url(images/ugm-toolbar-white.svg)
+}
+.preview-button-box .previewButton,
+.modal-preview-button-box .previewButton,
+.preview-button-box .previewPDFButton,
+.modal-preview-button-box .previewPDFButton {
+    height: 50px;
+    width: 50px;
+    padding-right: 15px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-right: 2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-position: 12px 10px!important
+}
+.preview-button-box .previewButton span,
+.modal-preview-button-box .previewButton span,
+.preview-button-box .previewPDFButton span,
+.modal-preview-button-box .previewPDFButton span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.preview-button-box .previewButton:hover,
+.modal-preview-button-box .previewButton:hover,
+.preview-button-box .previewPDFButton:hover,
+.modal-preview-button-box .previewPDFButton:hover {
+    background-color: #004185
+}
+.preview-button-box .previewButton,
+.modal-preview-button-box .previewButton {
+    background-image: url(images/ugm-preview-html-small-white.png)
+}
+.preview-button-box .previewPDFButton,
+.modal-preview-button-box .previewPDFButton {
+    background-image: url(images/ugm-preview-pdf-small-white.png)
+}
+.svg .preview-button-box .previewButton,
+.svg .modal-preview-button-box .previewButton {
+    background-image: url(images/ugm-preview-html-white.svg)
+}
+.svg .preview-button-box .previewPDFButton,
+.svg .modal-preview-button-box .previewPDFButton {
+    background-image: url(images/ugm-preview-pdf-white.svg)
+}
+.action_Preview_as_HTML button {
+    background-image: url(images/ugm-preview-html-small-black.png);
+    background-color: #fff;
+    border: 1px solid #fff;
+    background-position: .76em center;
+    padding-left: 1em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+    background-repeat: no-repeat
+}
+.svg .action_Preview_as_HTML button {
+    background-image: url(images/ugm-preview-html-black.svg)
+}
+.action_Preview_as_PDF button {
+    background-image: url(images/ugm-preview-pdf-small-black.png);
+    background-color: #fff;
+    border: 1px solid #fff;
+    background-position: .7em center;
+    padding-left: 1em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+    background-repeat: no-repeat
+}
+.svg .action_Preview_as_PDF button {
+    background-image: url(images/ugm-preview-pdf-black.svg)
+}
+.button-review button {
+    background-image: url(images/ugm-review-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em
+}
+.svg .button-review button {
+    background-image: url(images/ugm-review-white.svg)
+}
+.editTeachingPeriodAuthorizations button {
+    background-image: url(images/ugm-authorisation-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 14px 20px
+}
+.svg .editTeachingPeriodAuthorizations button {
+    background-image: url(images/ugm-authorisation-white.svg)
+}
+.dataGridTable .action_Zip button,
+.dataGridTable .action_Edit button,
+.dataGridTable .editButton,
+.dataGridTable .previewButton,
+.dataGridTable .previewPDFButton,
+.dataGridTable .editButtonDisabled {
+    background-color: #fff;
+    border: 1px solid #fff;
+    background-position: center center;
+    height: 50px;
+    width: 50px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 0;
+    background-repeat: no-repeat
+}
+.dataGridTable .action_Zip button:hover,
+.dataGridTable .action_Edit button:hover,
+.dataGridTable .editButton:hover,
+.dataGridTable .previewButton:hover,
+.dataGridTable .previewPDFButton:hover,
+.dataGridTable .editButtonDisabled:hover {
+    background-color: #eee
+}
+.dataGridTable .action_Zip button span,
+.dataGridTable .action_Edit button span,
+.dataGridTable .editButton span,
+.dataGridTable .previewButton span,
+.dataGridTable .previewPDFButton span,
+.dataGridTable .editButtonDisabled span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dataGridTable .dataGridDataItem .editButton {
+    background-image: url(images/ugm-edit-text-big-black.png);
+    background-size: 23px 34px;
+    margin-top: -0.5em
+}
+.dataGridTable .dataGridDataItem .editButtonDisabled {
+    background-image: url(images/ugm-edit-text-big-grey.png);
+    background-size: 23px 34px;
+    margin-top: -0.5em;
+    background-color: #fff
+}
+.dataGridTable .action_Edit button {
+    background-image: url(images/ugm-edit-text-small-black.png);
+    margin-top: .5em
+}
+.dataGridTable .previewButton {
+    background-image: url(images/ugm-preview-html-big-black.png);
+    background-size: 35px 34px;
+    margin-top: -0.5em
+}
+.dataGridTable .previewPDFButton {
+    background-image: url(images/ugm-preview-pdf-big-black.png);
+    background-size: 35px 34px;
+    margin-top: -0.5em
+}
+.dataGridTable .action_Zip button {
+    background-image: url(images/ugm-zip-big-black.png);
+    background-size: 22px 34px;
+    margin-top: .5em
+}
+.dataGridTable .action_Edit button.disabled {
+    background-image: url(images/ugm-edit-text-small-grey.png)
+}
+.dataGridTable .previewButton.disabled {
+    background-image: url(images/ugm-preview-html-small-grey.png)
+}
+.dataGridTable .previewPDFButton.disabled {
+    background-image: url(images/ugm-preview-pdf-small-grey.png)
+}
+.dataGridTable .action_Zip button.disabled {
+    background-image: url(images/ugm-zip-big-grey.png);
+    background-size: 23px 34px
+}
+.svg .dataGridTable .dataGridDataItem .editButton {
+    background-image: url(images/ugm-edit-text-black.svg)
+}
+.svg .dataGridTable .dataGridDataItem .editButtonDisabled {
+    background-image: url(images/ugm-edit-text-grey.svg)
+}
+.svg .dataGridTable .action_Edit button {
+    background-image: url(images/ugm-edit-text-black.svg)
+}
+.svg .dataGridTable .previewButton {
+    background-image: url(images/ugm-preview-html-black.svg)
+}
+.svg .dataGridTable .previewPDFButton {
+    background-image: url(images/ugm-preview-pdf-black.svg)
+}
+.svg .dataGridTable .action_Zip button {
+    background-image: url(images/ugm-zip-black.svg)
+}
+.svg .dataGridTable .action_Edit button.disabled {
+    background-image: url(images/ugm-edit-text-grey.svg)
+}
+.svg .dataGridTable .previewButton.disabled {
+    background-image: url(images/ugm-preview-html-grey.svg)
+}
+.svg .dataGridTable .previewPDFButton.disabled {
+    background-image: url(images/ugm-preview-pdf-grey.svg)
+}
+.svg .dataGridTable .action_Zip button.disabled {
+    background-image: url(images/ugm-zip-grey.svg)
+}
+.action_Preview_as_PDF button:hover,
+.action_Preview_as_HTML button:hover {
+    background-color: #eee;
+    border: 1px solid #004185
+}
+.action_Edit button span,
+.action_Preview_as_HTML button span,
+.action_Preview_as_PDF button span,
+.dataGridDataItemLabel {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.statusCellContainer button {
+    background-color: transparent;
+    font-weight: normal;
+    color: #32659c;
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+    font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    text-decoration: underline;
+    border: 0px none;
+    font-size: 12px;
+    font-size: 1.2rem;
+    display: block;
+    clear: both
+}
+.statusCellContainer button:hover {
+    background-color: transparent;
+    font-weight: normal;
+    color: #32659c;
+    font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    text-decoration: underline;
+    border: 0px none
+}
+.index .accContent {
+    max-height: 500px;
+    overflow: auto
+}
+.help-box {
+    background: #242424;
+    color: #fff;
+    margin-top: 2em
+}
+.help-box a {
+    color: #fff
+}
+.help-box h2 {
+    margin-top: 0
+}
+.help-box a {
+    color: #fff
+}
+.index .teachingPeriod {
+    padding: 0;
+    margin: 0;
+    display: block;
+    border-bottom: 1px dotted #ccc
+}
+.index .teachingPeriod a {
+    font-size: 18px;
+    font-size: 1.8rem;
+    text-decoration: underline;
+    display: inline-block;
+    vertical-align: bottom;
+    padding-top: 1em;
+    padding-bottom: .8em
+}
+.index .teachingPeriod:hover {
+    text-decoration: none
+}
+span.teachingPeriodLink {
+    display: inline-block;
+    width: 80%
+}
+.teachingPeriodEdit {
+    float: right
+}
+span.teachingPeriodEdit>button {
+    background-image: url(images/ugm-edit-text-big-black.png);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    background-size: 23px 34px;
+    top: -10px;
+    margin-top: 5px
+}
+span.teachingPeriodEdit>button:hover {
+    background-color: #f5f6f6
+}
+.svg span.teachingPeriodEdit>button {
+    background-image: url(images/ugm-edit-text-black.svg)
+}
+span.teachingPeriodEdit>button>span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.teaching-period-details-table {
+    margin-bottom: 1em
+}
+.readonlyTemplate {
+    background-image: url(images/ugm-preview-background.gif);
+    background-repeat: repeat;
+    border: 5px solid #ccc;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    overflow: hidden;
+    min-height: 1000px
+}
+.openable {
+    clear: both;
+    display: block
+}
+.openableToggle {
+    display: block;
+    float: left;
+    width: 1em;
+    height: 48px;
+    margin-left: -20px
+}
+.openableToggle a {
+    margin-top: 15px;
+    display: block
+}
+.modalDialogContents .openableToggle {
+    width: 1.5em;
+    margin-left: -25px
+}
+.openableContent {
+    display: block;
+    float: left;
+    width: 95%;
+    min-width: 5em
+}
+@media only screen and (max-width: 321px) {
+    .openableContent label {
+        white-space: nowrap
+    }
+}
+@media only screen and (max-width: 640px) {
+    .modalDialogContents .openableContent label {
+        white-space: nowrap
+    }
+}
+.openableContent>.nested-item {
+    margin-left: 2em;
+    margin-top: 0;
+    margin-bottom: 0
+}
+.openableContent .unit {
+    margin-top: -0.8em
+}
+.checkbox-fix {
+    padding: 0;
+    width: 18px;
+    height: 12px;
+    clear: both;
+    float: left;
+    margin: 1.2em 0 0 0.5em !important;
+    box-shadow: none;
+    border: none
+}
+.no-checkbox {
+    position: relative;
+    float: left;
+    box-sizing: border-box !important;
+    padding-left: 10px;
+    margin-bottom: 1em;
+    width: 60%;
+    width: -moz-calc(90% - 29px);
+    width: -webkit-calc(90% - 29px);
+    width: calc(90% - 29px);
+    margin-top: 15px
+}
+.no-checkbox::before {
+    position: absolute;
+    left: -27px;
+    top: -1px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    background: #fff;
+    content: " ";
+    cursor: pointer;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 10px;
+    vertical-align: top;
+    color: #0066a9;
+    box-shadow: inset 0 0 2px #ccc;
+    text-shadow: 0 -1px #ccc, 0 1px #242424;
+    margin-left: 0.5em
+}
+.no-checkbox::before {
+    background-color: #f5f6f6
+}
+.dataGridTable .fieldChoiceItemLabel {
+    min-height: .5em
+}
+.radioButton {
+    display: block
+}
+#treeAccordion {
+    margin-top: 2em;
+    overflow: visible
+}
+#treeAccordion .trees {
+    clear: both;
+    max-height: 500px;
+    overflow-y: scroll;
+    padding-top: 2em;
+    padding-left: 2em
+}
+.toggleClosed,
+.toggleOpen {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.modalDialogContents .trees {
+    padding-left: 3em
+}
+#addTreeNode button {
+    display: inline;
+    float: left;
+    margin-bottom: .5em;
+    clear: none
+}
+.trees {
+    clear: both
+}
+.dropdownMenuItem button {
+    margin-right: .5em;
+    margin-top: 0;
+    font-weight: normal
+}
+.toolbar-button-base {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.toolbar-button-base:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.toolbar-button-base:hover {
+    background-color: #004185
+}
+.toolbar-button-base span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.status-base {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin-right: 0;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    width: 60px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.status-base span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.orgmap #addTreeNode button {
+    background-image: url(images/ugm-toolbar-add-tree-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.orgmap #addTreeNode button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.orgmap #addTreeNode button:hover {
+    background-color: #004185
+}
+.orgmap #addTreeNode button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.svg .orgmap #addTreeNode button {
+    background-image: url(images/ugm-toolbar-add-tree-white.svg)
+}
+.dropdownMenu button {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.dropdownMenu button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu button:hover {
+    background-color: #004185
+}
+.dropdownMenu button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodestate_status span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_edit button,
+.dropdownMenu .nodeaction_edit_template button {
+    background-image: url(images/ugm-toolbar-edit-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.dropdownMenu .nodeaction_edit button:hover,
+.dropdownMenu .nodeaction_edit_template button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_edit button:hover,
+.dropdownMenu .nodeaction_edit_template button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_edit button span,
+.dropdownMenu .nodeaction_edit_template button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_delete_node button {
+    background-image: url(images/ugm-toolbar-delete-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    background-color: #a52e29;
+    background-repeat: no-repeat
+}
+.dropdownMenu .nodeaction_delete_node button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_delete_node button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_delete_node button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_delete_node button:hover {
+    background-color: #8e2825
+}
+.dropdownMenu .nodeaction_remove button {
+    background-image: url(images/ugm-toolbar-remove-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    width: 60px;
+    background-color: #a52e29;
+    background-repeat: no-repeat
+}
+.dropdownMenu .nodeaction_remove button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_remove button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_remove button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_remove button:hover {
+    background-color: #8e2825
+}
+.dropdownMenu .nodeaction_review button {
+    background-image: url(images/ugm-toolbar-review-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.dropdownMenu .nodeaction_review button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_review button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_review button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_unapprove button {
+    background-image: url(images/ugm-toolbar-unapprove-white.png);
+    width: 85px;
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.dropdownMenu .nodeaction_unapprove button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_unapprove button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_unapprove button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_edit_authorisation button {
+    background-image: url(images/ugm-toolbar-authorisation-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    width: 80px
+}
+.dropdownMenu .nodeaction_edit_authorisation button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_edit_authorisation button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_edit_authorisation button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_submit_for_approval button {
+    background-image: url(images/ugm-toolbar-submit-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.dropdownMenu .nodeaction_submit_for_approval button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_submit_for_approval button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_submit_for_approval button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_rename button {
+    background-image: url(images/ugm-toolbar-rename-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    width: 60px
+}
+.dropdownMenu .nodeaction_rename button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_rename button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_rename button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_on_hold button {
+    background-image: url(images/ugm-toolbar-on-hold-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    width: 65px
+}
+.dropdownMenu .nodeaction_on_hold button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_on_hold button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_on_hold button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_unhold button {
+    background-image: url(images/ugm-toolbar-on-hold-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    width: 65px
+}
+.dropdownMenu .nodeaction_unhold button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_unhold button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_unhold button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_revisions button {
+    background-image: url(images/ugm-toolbar-revisions-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    width: 65px;
+    background-size: 56px 38px
+}
+.dropdownMenu .nodeaction_revisions button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_revisions button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_revisions button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_add_child button {
+    background-image: url(images/ugm-toolbar-add-child-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.dropdownMenu .nodeaction_add_child button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_add_child button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_add_child button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_move button {
+    background-image: url(images/ugm-toolbar-move-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.dropdownMenu .nodeaction_move button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_move button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_move button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_report button {
+    background-image: url(images/ugm-toolbar-report-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    background-size: 43px 35px
+}
+.dropdownMenu .nodeaction_report button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .nodeaction_report button:hover {
+    background-color: #004185
+}
+.dropdownMenu .nodeaction_report button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_change_status {
+    width: 80px;
+    margin-right: -0.3em;
+    margin-left: -0.3em
+}
+.dropdownMenu .nodestate_status button:hover {
+    text-decoration: none
+}
+.dropdownMenu .nodestate_status_draft div {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin-right: 0;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    width: 60px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    background-color: #c0c0c0;
+    background-image: url(images/ugm-toolbar-draft-black.png);
+    background-size: 34px 36px;
+    width: 40px
+}
+.dropdownMenu .nodestate_status_draft div span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodestate_status_onhold div {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin-right: 0;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    width: 60px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    background-color: #ffa500;
+    background-image: url(images/ugm-toolbar-on-hold-black.png)
+}
+.dropdownMenu .nodestate_status_onhold div span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodestate_status_review div {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin-right: 0;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    width: 60px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    background-color: #ffa500;
+    background-image: url(images/ugm-toolbar-review-black.png)
+}
+.dropdownMenu .nodestate_status_review div span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodestate_status_submitted div {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin-right: 0;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    width: 60px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    background-color: #9acd32;
+    background-image: url(images/ugm-toolbar-submitted-black.png);
+    width: 80px;
+    background-size: 67px 38px
+}
+.dropdownMenu .nodestate_status_submitted div span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodestate_status_approved div {
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: .5em;
+    margin-right: 0;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    width: 60px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    background-color: #125e38;
+    background-image: url(images/ugm-toolbar-approved-white.png);
+    width: 80px
+}
+.dropdownMenu .nodestate_status_approved div span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.dropdownMenu .nodeaction_change_status button {
+    background-image: url(images/ugm-toolbar-change-status-white.png);
+    background-size: 88px 38px;
+    width: 110px
+}
+.svg .dropdownMenu .nodeaction_edit button,
+.svg .dropdownMenu .nodeaction_edit_template button {
+    background-image: url(images/ugm-toolbar-edit-white.svg)
+}
+.svg .dropdownMenu .nodeaction_delete_node button {
+    background-image: url(images/ugm-toolbar-delete-white.svg)
+}
+.svg .dropdownMenu .nodeaction_remove button {
+    background-image: url(images/ugm-toolbar-remove-white.svg)
+}
+.svg .dropdownMenu .nodeaction_review button {
+    background-image: url(images/ugm-toolbar-review-white.svg)
+}
+.svg .dropdownMenu .nodeaction_unapprove button {
+    background-image: url(images/ugm-toolbar-unapprove-white.svg)
+}
+.svg .dropdownMenu .nodeaction_edit_authorisation button {
+    background-image: url(images/ugm-toolbar-authorisation-white.svg)
+}
+.svg .dropdownMenu .nodeaction_submit_for_approval button {
+    background-image: url(images/ugm-toolbar-submit-white.svg)
+}
+.svg .dropdownMenu .nodeaction_rename button {
+    background-image: url(images/ugm-toolbar-rename-white.svg)
+}
+.svg .dropdownMenu .nodeaction_on_hold button {
+    background-image: url(images/ugm-toolbar-on-hold-white.svg)
+}
+.svg .dropdownMenu .nodeaction_un-hold button {
+    background-image: url(images/ugm-toolbar-on-hold-white.svg)
+}
+.svg .dropdownMenu .nodeaction_add_child button {
+    background-image: url(images/ugm-toolbar-add-child-white.svg)
+}
+.svg .dropdownMenu .nodeaction_revisions button {
+    background-image: url(images/ugm-toolbar-revisions-white.svg)
+}
+.svg .dropdownMenu .nodeaction_move button {
+    background-image: url(images/ugm-toolbar-move-white.svg)
+}
+.svg .dropdownMenu .nodeaction_report button {
+    background-image: url(images/ugm-toolbar-report-white.svg)
+}
+.svg .dropdownMenu .nodeaction_change_status button {
+    background-image: url(images/ugm-toolbar-change-status-white.svg)
+}
+.svg .dropdownMenu .nodestate_status_draft div {
+    background-image: url(images/ugm-toolbar-draft-black.svg)
+}
+.svg .dropdownMenu .nodestate_status_onhold div {
+    background-image: url(images/ugm-toolbar-on-hold-black.svg);
+    background-size: 48px 35px
+}
+.svg .dropdownMenu .nodestate_status_review div {
+    background-image: url(images/ugm-toolbar-review-black.svg);
+    background-size: 44px 38px
+}
+.svg .dropdownMenu .nodestate_status_submitted div {
+    background-image: url(images/ugm-toolbar-submitted-black.svg)
+}
+.svg .dropdownMenu .nodestate_status_approved div {
+    background-image: url(images/ugm-toolbar-approved-white.svg);
+    background-size: 58px 38px
+}
+.multiSelectActions button {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.multiSelectActions button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.multiSelectActions button:hover {
+    background-color: #004185
+}
+.multiSelectActions button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.multiSelectActions .button-zip button {
+    background-image: url(images/ugm-toolbar-zip-white.png)
+}
+.multiSelectActions .button-zip button.disabled {
+    background-image: url(images/ugm-toolbar-zip-black.png);
+    background-color: #eee
+}
+.multiSelectActions .button-attach button {
+    background-image: url(images/ugm-toolbar-attach-white.png)
+}
+.multiSelectActions .button-attach button.disabled {
+    background-image: url(images/ugm-toolbar-attach-black.png);
+    background-color: #eee
+}
+.svg .multiSelectActions .button-zip button {
+    background-image: url(images/ugm-toolbar-zip-white.svg)
+}
+.svg .multiSelectActions .button-zip button.disabled {
+    background-image: url(images/ugm-toolbar-zip-black.svg)
+}
+.svg .multiSelectActions .button-attach button {
+    background-image: url(images/ugm-toolbar-attach-white.svg)
+}
+.svg .multiSelectActions .button-attach button.disabled {
+    background-image: url(images/ugm-toolbar-attach-black.svg)
+}
+.dataGridAdditionalButtonsContainer .button-filter button {
+    background-image: url(images/ugm-toolbar-filter-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em
+}
+.dataGridAdditionalButtonsContainer .button-filter button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dataGridAdditionalButtonsContainer .button-filter button:hover {
+    background-color: #004185
+}
+.dataGridAdditionalButtonsContainer .button-filter button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.svg .dataGridAdditionalButtonsContainer .button-filter button {
+    background-image: url(images/ugm-toolbar-filter-white.svg)
+}
+.dropdownMenu .report-button button,
+.dataGridAdditionalButtonsContainer .report-button {
+    background-image: url(images/ugm-toolbar-report-white.png);
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: .5em;
+    margin-top: 0;
+    background-position: center center;
+    height: 55px;
+    min-width: 55px;
+    float: left;
+    clear: none;
+    margin-bottom: .5em;
+    background-size: 41px 34px
+}
+.dropdownMenu .report-button button:hover,
+.dataGridAdditionalButtonsContainer .report-button:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.dropdownMenu .report-button button:hover,
+.dataGridAdditionalButtonsContainer .report-button:hover {
+    background-color: #004185
+}
+.dropdownMenu .report-button button span,
+.dataGridAdditionalButtonsContainer .report-button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.svg .dropdownMenu .report-button button,
+.svg .dataGridAdditionalButtonsContainer .report-button {
+    background-image: url(images/ugm-toolbar-report-white.svg)
+}
+.modalDialogContents #addTreeNode {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.modalDialogContents .sourceElem {
+    font-size: 25px;
+    font-size: 2.5rem;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em
+}
+.filter-button {
+    display: block;
+    overflow: hidden;
+    clear: both
+}
+#unitListing .dataGridContainer,
+#editorContainer .dataGridContainer {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 100%;
+    margin-right: 0
+}
+#unitListing .dataGridContainer.np,
+#editorContainer .dataGridContainer.np {
+    padding: 0
+}
+#editorContainer .dataGridContainer .dataGridTable {
+    width: 100%
+}
+.dataGridDataItem,
+.dataGridTable {
+    border: 1px solid #EAEAEA
+}
+#unitListing .dataGridContainer td,
+#editorContainer .dataGridContainer {
+    font-size: 13px;
+    font-size: 1.3rem
+}
+#unitListing .dataGridContainer th,
+#editorContainer .dataGridContainer {
+    font-size: 14px;
+    font-size: 1.4rem
+}
+#unitListing .dataGridContainer th>div>div {
+    padding-top: .5em;
+    padding-bottom: .5em
+}
+.dataGridHeaderItemLabel.data-grid-first-element {
+    margin-top: 1em
+}
+#unitListing .dataGridTable th:nth-child(1) .fieldChoiceItemLabel {
+    margin-top: 0;
+    margin-left: 1px;
+    font-size: 13px
+}
+#unitListing input[type=checkbox] {
+    margin: 0 0.5em 0 0.5em !important
+}
+#unitListing input[type="checkbox"]+label,
+#unitListing input[type="radio"]+label {
+    float: none
+}
+#unitListing input[type="checkbox"]+label:before,
+#unitListing input[type="radio"]+label:before {
+    left: 0;
+    top: 0
+}
+.dataGridTableContainer>div {
+    overflow: auto;
+    overflow-y: hidden
+}
+.dataGridMultiSelectControlsContainer {
+    float: left
+}
+.dataGridAdditionalButtonsContainer {
+    display: inline-block;
+    margin-left: 5px
+}
+.dataGridContainer .dataGridFilterSummary {
+    margin-bottom: .5em;
+    margin-top: 2em
+}
+.dataGridContainer .dataGridFilter {
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    margin-right: .5em
+}
+.dataGridContainer .dataGridFilterLabel {
+    background-color: transparent
+}
+.dataGridContainer .dataGridFilterRemoveButton {
+    background-color: transparent;
+    margin-left: 0
+}
+.dataGridDataItemFilterOutControl,
+.dataGridDataItemFilterOnlyControl {
+    float: right;
+    clear: both;
+    display: inline-block;
+    font-size: 11px;
+    font-size: 1.1rem
+}
+.dataGridTable .data-grid-first-element {
+    margin-top: 0
+}
+#unitListing .dataGridTable th:first-child .dataGridHeaderItemLabel {
+    padding-right: .5em;
+    padding-left: .5em;
+    padding-top: 0
+}
+#unitListing .dataGridTable th:nth-child(2)>div,
+#unitListing .dataGridTable th:nth-child(3)>div,
+#unitListing .dataGridTable th:nth-child(4)>div,
+#unitListing .dataGridTable th:nth-child(5)>div {
+    max-width: 50px
+}
+th.dataGridHeaderCell.dataColumnCell_Unit_code {
+    max-width: 75px
+}
+#unitListing .dataGridTable th:nth-child(2)>div>div.data-grid-first-element,
+#unitListing .dataGridTable th:nth-child(3)>div>div.data-grid-first-element,
+#unitListing .dataGridTable th:nth-child(4)>div>div.data-grid-first-element,
+#unitListing .dataGridTable th:nth-child(5)>div>div.data-grid-first-element {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0
+}
+.dataGridHeaderItemSortControl,
+.dataGridDataItemFilterOutControl,
+.dataGridDataItemFilterOnlyControl {
+    float: right
+}
+.modalDialogController .dataGridHeaderItemSortControl,
+.modalDialogController .dataGridDataItemFilterOutControl,
+.modalDialogController .dataGridDataItemFilterOnlyControl {
+    position: relative
+}
+.modalDialogController .personSearchResults .dataGridHeaderItemSortControl {
+    position: initial
+}
+.dataGridDataItemValue {
+    float: left;
+    clear: both;
+    padding-bottom: 1em
+}
+.dataGridDataItemValue ul li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+.dataGridDataItemValue ul {
+    margin: 0;
+    padding: 0
+}
+.dataColumnCell_Edit label,
+.dataColumnCell_HTML label,
+.dataColumnCell_PDF label,
+.dataColumnCell_ZIP label {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding-right: 0
+}
+.dataColumnSort_Unit_code span,
+.dataColumnSort_Title span,
+.dataColumnSort_Status span,
+.dataColumnSort_School span,
+.dataColumnSort_Chief_examiner span,
+.dataColumnSort_Relationship span,
+span.dataGridHeaderItemIsSortingDescending,
+span.dataGridHeaderItemIsSortingAscending {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+select.unit-actions {
+    width: 140px;
+    word-wrap: normal
+}
+.dataColumnCell_Actions div div {
+    word-wrap: normal
+}
+.auth-multi-select {
+    font-size: 15px;
+    font-size: 1.5rem
+}
+.authorizedActions:nth-child(odd) {
+    width: 45%;
+    float: right;
+    display: inline-block;
+    background-color: #f5f6f6;
+    clear: right;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1em
+}
+.authorizedActions:nth-child(even) {
+    width: 50%;
+    float: left;
+    display: inline-block;
+    background-color: #f5f6f6;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1em
+}
+@media only screen and (max-width: 640px) {
+    .authorizedActions:nth-child(odd),
+    .authorizedActions:nth-child(even) {
+        width: 100%;
+        float: none;
+        display: block
+    }
+}
+#emailTemplateContainer .templateContainer,
+.attachRule {
+    border: 1px solid #CCC;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block;
+    overflow: hidden;
+    clear: both
+}
+.emailTriggerRemove button,
+.removeAttachRule button,
+.removeAuthorization button {
+    background: #a52e29;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1em;
+    background-image: url(images/ugm-trash-small-white.png);
+    padding-left: 46px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 3em;
+    background-size: 17px 20px;
+    color: #fff
+}
+.emailTriggerRemove button:hover,
+.removeAttachRule button:hover,
+.removeAuthorization button:hover {
+    background-color: #8e2825
+}
+.email-container {
+    clear: both;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    padding-top: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: #eee
+}
+.email-container h3 {
+    font-weight: normal
+}
+.fieldOption {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    border: 1px solid #ccc;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: .5em;
+    margin-bottom: .5em
+}
+.fieldOptions .multiSelectFieldType select {
+    max-width: 10em;
+    margin-right: 10em
+}
+.fieldOptions .fieldHeaderText {
+    float: left;
+    display: block;
+    width: 100%;
+    padding-bottom: .5em
+}
+.fieldOptions .editableField_Option_order {
+    width: 4em
+}
+.fieldOptions select,
+.fieldOptions button,
+.fieldOptions .editableField_Option_order,
+.fieldOptions input {
+    display: block;
+    float: left;
+    clear: both;
+    margin-bottom: 1em
+}
+#editorContainer .fieldOrderContainer,
+#editorContainer .multiSelectfieldOrder {
+    display: block;
+    width: 7em;
+    text-align: right;
+    float: right;
+    clear: right;
+    margin-top: -2px
+}
+@media only screen and (max-width: 640px) {
+    #editorContainer .fieldOrderContainer,
+    #editorContainer .multiSelectfieldOrder {
+        width: 5em
+    }
+}
+#editorContainer .fieldOrderContainer .fieldOrder .fieldHeader,
+#editorContainer .multiSelectfieldOrder .fieldOrder .fieldHeader,
+#editorContainer .fieldOrderContainer .fieldItem .fieldHeader,
+#editorContainer .multiSelectfieldOrder .fieldItem .fieldHeader {
+    width: auto;
+    margin-top: .7em;
+    margin-right: .5em;
+    display: inline-block
+}
+#editorContainer .fieldOrderContainer .fieldOrder .fieldHeaderText,
+#editorContainer .multiSelectfieldOrder .fieldOrder .fieldHeaderText,
+#editorContainer .fieldOrderContainer .fieldItem .fieldHeaderText,
+#editorContainer .multiSelectfieldOrder .fieldItem .fieldHeaderText {
+    float: none
+}
+#editorContainer .fieldOrderContainer .fieldOrder .editableField_Order,
+#editorContainer .multiSelectfieldOrder .fieldOrder .editableField_Order,
+#editorContainer .fieldOrderContainer .fieldItem .editableField_Order,
+#editorContainer .multiSelectfieldOrder .fieldItem .editableField_Order {
+    width: 3.5em;
+    float: right
+}
+#editorContainer .modalDialogContents .fieldOrderContainer .fieldOrder .fieldHeader {
+    width: auto;
+    margin-top: 0em;
+    margin-right: 0em;
+    display: block
+}
+#editorContainer .modalDialogContents .fieldOrderContainer .fieldOrder .fieldItem .editableField_Order {
+    width: 3.5em
+}
+.multiSelectfieldOrder {
+    float: right
+}
+.field-box {
+    background-color: #f5f6f6;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em
+}
+.fieldValueContainer {
+    border: 1px solid #686868;
+    clear: both;
+    overflow: hidden
+}
+.fieldValueContainer+.fieldValueContainer {
+    margin-top: 1em
+}
+.fieldItem .fieldHeaderText {
+    float: left;
+    display: block;
+    width: 100%;
+    padding-bottom: .5em
+}
+.updateOptionText {
+    margin-top: .5em;
+    display: block;
+    float: left;
+    clear: both;
+    margin-bottom: 1em;
+    width: 100%
+}
+.custom-object-html-label {
+    display: block;
+    clear: both
+}
+.error {
+    border: 1px solid red
+}
+.error .description {
+    font-weight: bold
+}
+.error .offendingXml {
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff
+}
+.fieldMandatory {
+    color: #ca322a !important;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    display: inline-block
+}
+.newBlockHelpText {
+    background-color: yellow!important;
+    border: 1px solid #ffa500 !important
+}
+.edit-entity-accordion div.fieldHelp {
+    color: #242424;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: .5em;
+    padding-left: 2em;
+    background-color: #FFFFC6;
+    clear: both;
+    overflow: hidden;
+    border: 1px solid #686868;
+    margin-bottom: 1em;
+    background-image: url(images/ugm-help-small-black.png);
+    background-repeat: no-repeat;
+    background-position: .5em .5em
+}
+.svg .edit-entity-accordion div.fieldHelp {
+    background-image: url(images/ugm-help-black.svg)
+}
+.edit-entity-accordion div.blockHelpContainer {
+    margin-bottom: 1em
+}
+.blockHeader {
+    clear: both;
+    min-height: 30px
+}
+h3.blockHeader {
+    margin-bottom: 0
+}
+.blockProperties button {
+    float: right;
+    clear: both;
+    height: 55px;
+    width: 55px;
+    display: inline-block;
+    background-image: url(images/ugm-settings-small-white.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: 1em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background-position: center center
+}
+.blockProperties button span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.blockProperties button:hover {
+    background-color: #004185
+}
+.svg .blockProperties button {
+    background-image: url(images/ugm-settings-white.svg)
+}
+#entityName {
+    font-size: 25px;
+    font-size: 2.5rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: block
+}
+#editor .addBlock {
+    float: left;
+    clear: both
+}
+h3.readonly-section {
+    background-color: #D9D9D9
+}
+h3.readonly-section a {
+    color: #004185
+}
+h3.readonly-section .readonly-section-icon {
+    background-image: url('images/ugm-preview-small-grey.png');
+    background-size: 20px 11px;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 1em;
+    background-repeat: no-repeat
+}
+h3.readonly-section .readonly-section-icon span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.svg h3.readonly-section .readonly-section-icon {
+    background-image: url('images/ugm-preview-grey.svg')
+}
+h3.incomplete-mandatory-section {
+    border: 1px solid red
+}
+h3.incomplete-mandatory-section .incomplete-mandatory-section-icon {
+    background-image: url('images/all-error-small.png');
+    background-size: 18px 18px;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 1em;
+    background-repeat: no-repeat
+}
+h3.incomplete-mandatory-section .incomplete-mandatory-section-icon span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+h3.incomplete-mandatory-section h3.no-mandatory-section,
+h3.incomplete-mandatory-section h3.completed-mandatory-section {
+    background: #fff
+}
+.svg h3.incomplete-mandatory-section .incomplete-mandatory-section-icon {
+    background-image: url('images/all-error.svg')
+}
+h3.completed-mandatory-section .completed-mandatory-section-icon {
+    background-image: url('images/ugm-edit-small-black.png');
+    background-size: 16px 18px;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 1em;
+    background-repeat: no-repeat
+}
+h3.completed-mandatory-section .completed-mandatory-section-icon span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+h3.completed-mandatory-section h3.no-mandatory-section,
+h3.completed-mandatory-section h3.completed-mandatory-section {
+    background: #fff
+}
+.svg .mandatory-field-summary .completed-mandatory-section-icon {
+    background-image: url('images/ugm-edit-small-black.svg')
+}
+.mandatory-field-summary h3 {
+    background-image: url('images/all-error-mini.png');
+    background-size: 14px 15px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 1em;
+    color: #ca322a
+}
+.mandatory-field-summary .error-list {
+    color: #ca322a
+}
+.mandatory-field-summary .error-list div {
+    list-style: disc;
+    margin-left: 2em;
+    display: list-item
+}
+.mandatory-field-summary .error-list .error {
+    border: none
+}
+.svg .mandatory-field-summary h3 {
+    background-image: url('images/all-error.svg')
+}
+#unitListing .fieldHeaderText {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.personSearchResults .dataGridTableContainer>div {
+    clear: both
+}
+.page .wrapper .editor-wrapper {
+    width: calc(96% - 44px)
+}
+.floating-buttons {
+    position: fixed;
+    right: 0;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 260px;
+    z-index: 3;
+    -webkit-transition: right 0.5s;
+    transition: right 0.5s
+}
+.floating-buttons.closed {
+    right: -196px
+}
+.floating-buttons .nav-menu {
+    height: 44px;
+    width: 44px;
+    margin-top: 0;
+    position: absolute;
+    background: #004185 left top no-repeat
+}
+.floating-buttons .navItem.current button {
+    background-color: #004185
+}
+.floating-buttons .navItem {
+    width: 100%;
+    min-height: 44px;
+    min-width: 44px;
+    display: block;
+    background: transparent;
+    clear: both
+}
+.floating-buttons .navItem .button {
+    margin: 0 0 1px 0;
+    margin-right: 0;
+    width: calc(100% - 44px);
+    float: right;
+    text-align: left;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em
+}
+.floating-buttons .button {
+    right: 0
+}
+.floating-buttons .hidden {
+    left: auto;
+    right: -196px;
+    width: auto;
+    height: auto;
+    visibility: hidden;
+    -webkit-transition: right 3s, visibility 3s;
+    transition: right 3s, visibility 3s
+}
+@media only screen and (max-width: 1024px) {
+    .page .wrapper .editor-wrapper {
+        margin-left: 2%
+    }
+}
+@media only screen and (max-width: 640px) {
+    .floating-buttons {
+        top: 102px
+    }
+    .floating-buttons .mobile-scroll {
+        max-height: 200px;
+        overflow-y: scroll;
+        float: right;
+        width: 100%
+    }
+}
+.floating-buttons {
+    top: 190px
+}
+.floating-buttons .nav-menu {
+    border: 1px solid #fff
+}
+.floating-buttons .nav-menu {
+    background-image: url('images/button-menu.png');
+    background-size: 44px 44px;
+    min-height: 0px
+}
+.floating-buttons .navItem .navItem-header {
+    max-height: 44px;
+    background-color: #004185;
+    font-weight: normal;
+    font-size: 18px;
+    font-size: 1.8rem
+}
+.floating-buttons .navItem .navItem-header span {
+    margin-top: -10px;
+    display: block
+}
+.floating-buttons .navItem .navItem-header:hover {
+    text-decoration: none
+}
+.floating-buttons .navItemhides {
+    min-height: 0px
+}
+.floating-buttons .navItem a,
+.floating-buttons .auditButton button,
+.floating-buttons .changeStatus button,
+.floating-buttons .expand-all button {
+    margin: 0 0 1px 0;
+    margin-right: 0;
+    width: calc(100% - 44px);
+    float: right;
+    text-align: left;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em
+}
+.svg .floating-buttons .nav-menu {
+    background-image: url('images/button-menu.svg')
+}
+#changeStatus button {
+    margin-top: 0;
+    margin-bottom: .5em
+}
+.option-other-editor {
+    clear: both;
+    display: block
+}
+.floating-buttons .nav-close button {
+    background-image: url(images/button-close.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    background-color: #004185
+}
+.floating-buttons .fb-expand-collapse button {
+    background-image: url(images/ugm-fb-expand.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 50px
+}
+.svg .floating-buttons .fb-expand-collapse button {
+    background-image: url(images/ugm-fb-expand.svg)
+}
+.floating-buttons .fb-expand-collapse button.closed {
+    background-image: url(images/ugm-fb-collapse.png)
+}
+.svg .floating-buttons .fb-expand-collapse button.closed {
+    background-image: url(images/ugm-fb-collapse.svg)
+}
+.floating-buttons .fb-change-status button {
+    background-image: url(images/ugm-wait-small-white.png);
+    background-position: 15px center;
+    background-size: 15px 20px;
+    background-repeat: no-repeat;
+    padding-left: 50px
+}
+.svg .floating-buttons .fb-change-status button {
+    background-image: url(images/ugm-wait-white.svg)
+}
+.floating-buttons .fb-view-revisions button {
+    background-image: url(images/ugm-history-small-white.png);
+    background-position: 10px center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    padding-left: 50px
+}
+.svg .floating-buttons .fb-view-revisions button {
+    background-image: url(images/ugm-history-white.svg)
+}
+.floating-buttons .fb-preview-pdf a {
+    background-image: url(images/ugm-preview-pdf-small-white.png);
+    background-position: 10px center;
+    background-size: 25px 24px;
+    background-repeat: no-repeat;
+    padding-left: 50px
+}
+.svg .floating-buttons .fb-preview-pdf a {
+    background-image: url(images/ugm-preview-pdf-white.svg)
+}
+.floating-buttons .fb-preview-html a {
+    background-image: url(images/ugm-preview-html-small-white.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 25px 24px;
+    padding-left: 50px
+}
+.svg .floating-buttons .fb-preview-html a {
+    background-image: url(images/ugm-preview-html-white.svg)
+}
+.floating-buttons .fb-unit-import a {
+    background-image: url(images/ugm-import-small-white.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 25px 24px;
+    padding-left: 50px
+}
+.svg .floating-buttons .fb-unit-import a {
+    background-image: url(images/ugm-import-white.svg)
+}
+.floating-buttons .fb-back-to-top a {
+    background-image: url(images/ugm-fb-back-to-top.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 50px
+}
+.fieldItem .editableField {
+    margin-bottom: 1em
+}
+.fieldValue,
+.fieldHelp {
+    display: block;
+    clear: both
+}
+#editorContainer .fieldHelp {
+    padding-bottom: 1em
+}
+.field-button-block {
+    width: 100%;
+    display: block;
+    clear: both;
+    padding-top: .5em;
+    padding-bottom: .5em
+}
+.fieldRemoveAnswer {
+    clear: both
+}
+.fieldAddNewAnswer {
+    display: inline-block;
+    clear: both
+}
+div.field-heading h3 {
+    margin-top: .5em
+}
+.blockMandatoryContainer,
+.blockHelpContainer,
+.blockLandscapeContainer {
+    display: block;
+    clear: both
+}
+div.fieldHeader.field-heading>span.fieldName {
+    display: inline-block;
+    width: 100%
+}
+#editorContainer .field-container-header {
+    overflow: hidden;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-bottom: 1px solid #C1C1C1;
+    background: #eee
+}
+#editorContainer .field-container-modal {
+    overflow: hidden;
+    border: 1px solid #C1C1C1;
+    margin-bottom: 1em
+}
+#editorContainer .field-container-modal h3 {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 0;
+    background: #242424;
+    color: #fff;
+    display: block;
+    clear: both;
+    overflow: hidden
+}
+#editorContainer .field-container-modal h3 label {
+    margin: 0;
+    padding: 0
+}
+#editorContainer .field-container-modal h4 {
+    clear: both
+}
+#editorContainer .field-container-modal .field-container-modal-content {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1em;
+    padding-right: 1em
+}
+#editorContainer .field-container-modal .parentField {
+    font-weight: normal;
+    display: block;
+    clear: both;
+    background-color: transparent;
+    color: #0066a9;
+    padding: 0
+}
+#editorContainer .field-container-modal .half {
+    display: block;
+    overflow: hidden
+}
+#editorContainer .field-container-modal .fieldType .fieldHeader,
+#editorContainer .field-container-modal .fieldOrder .fieldHeader {
+    margin-top: 0
+}
+#editorContainer .field-container-modal .fieldOrder input,
+#editorContainer .field-container-modal .fieldOrder select {
+    margin-bottom: 0
+}
+#editorContainer .fieldOption .field-container-header {
+    margin-left: -1em;
+    margin-right: -1em
+}
+.field-container-header .fieldOrderContainer,
+.field-container-header .fieldDisableContainer,
+.field-container-header .multiSelectfieldIsMandatory .fieldItem {
+    margin-top: -1em
+}
+#editorContainer .field-container-content {
+    overflow: hidden;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background: #fff
+}
+#editorContainer .field-nested-container {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    background-color: #f5f6f6;
+    margin-top: 1em
+}
+#editorContainer .field-nested-container .field-box:first-child {
+    padding-top: 0
+}
+#editorContainer .field-nested-container .field-box {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0
+}
+#editorContainer .field-nested-container .field-nested {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1em;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%
+}
+#editorContainer .field-nested-container .field-nested h3 {
+    font-size: 16px;
+    font-size: 1.6rem;
+    padding-bottom: 0;
+    margin-bottom: .5em
+}
+#editorContainer .field-nested-container .field-nested .field-box {
+    margin-top: 1em
+}
+#editorContainer .fieldMandatoryContainer,
+#editorContainer .fieldDisableContainer,
+#editorContainer .field-container-header .multiSelectfieldIsMandatory .fieldItem {
+    display: block;
+    width: 65%;
+    float: left;
+    padding-top: 9px
+}
+#editorContainer .fieldValueContainer .field-container-header .fieldEnableContainer {
+    display: block;
+    width: 65%;
+    float: left
+}
+#editorContainer .modalDialogContents .orderContainer {
+    display: block;
+    width: 8em;
+    text-align: left;
+    float: left;
+    clear: both;
+    padding-bottom: 1em
+}
+.modalDialogContents .fieldOrderContainer .fieldOrder input {
+    width: 60px
+}
+.editableField_Field_value_order,
+.field-container-modal .editableField_Order {
+    width: 4em
+}
+.modal-dialog-container .modal-dialog-header {
+    margin-bottom: 1em
+}
+.modal-dialog-container .validationContainer ul.validationResults {
+    padding-left: 0
+}
+.modal-dialog-container .dataGridFilteringControls {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+#editorContainer .fieldHelp:empty,
+.edit-entity-accordion div.person:empty,
+.fieldAddNewAnswer:empty,
+.field-button-block:empty,
+.fieldValueContainer:empty {
+    display: none!important
+}
+.editHtmlStyle textarea,
+.editPDFStyle textarea {
+    height: 350px;
+    font-family: monospace
+}
+.publishing-search-icon {
+    clear: none;
+    background-image: url(images/ugm-search-small-white.png);
+    background-repeat: no-repeat;
+    background-position: 13px 10px;
+    background-size: 22px 23px;
+    height: 44px;
+    width: 44px;
+    float: right;
+    clear: both;
+    margin-top: 0
+}
+.svg .publishing-search-icon {
+    background-image: url(images/ugm-search-white.svg)
+}
+.search-guide .find-guide-box {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 100%;
+    margin-right: 0;
+    background-color: #f5f6f6;
+    margin-top: 2em;
+    padding-top: 0
+}
+.search-guide .find-guide-box.np {
+    padding: 0
+}
+.search-guide .searchBox,
+.search-guide .submitContainer {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 100%;
+    margin-right: 0;
+    clear: both
+}
+.search-guide .searchBox.np,
+.search-guide .submitContainer.np {
+    padding: 0
+}
+.search-guide .submitContainer {
+    margin-top: -1em
+}
+.search-guide .find-guide-box-teaching-period,
+.search-guide .find-guide-box-faculty,
+.search-guide .find-guide-box-year {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 32%;
+    margin: 0
+}
+.search-guide .find-guide-box-teaching-period.np,
+.search-guide .find-guide-box-faculty.np,
+.search-guide .find-guide-box-year.np {
+    padding: 0
+}
+.search-guide .find-guide-box-teaching-period:last-of-type,
+.search-guide .find-guide-box-faculty:last-of-type,
+.search-guide .find-guide-box-year:last-of-type {
+    margin-right: 0
+}
+.search-guide .find-guide-box .termQueryItemLabel {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.search-guide .find-guide-box .termQuery {
+    width: 80%;
+    width: -moz-calc(100% - 70px);
+    width: -webkit-calc(100% - 70px);
+    width: calc(100% - 70px);
+    margin-right: 0
+}
+.search-guide .find-guide-box h2 {
+    margin-top: .5em
+}
+.search-guide .find-guide-box .search-icon {
+    clear: none;
+    background-image: url(images/ugm-search-small-white.png);
+    background-repeat: no-repeat;
+    background-position: 13px 10px;
+    background-size: 22px 23px;
+    height: 44px;
+    width: 44px;
+    float: right;
+    clear: both;
+    margin-top: 0
+}
+.search-guide .find-guide-box .year,
+.search-guide .find-guide-box .teachingPeriod,
+.search-guide .find-guide-box .faculty,
+.search-guide .find-guide-box .tpCode {
+    margin-top: -1em
+}
+.search-guide .search-accordion {
+    margin-bottom: 1em;
+    display: block;
+    clear: both;
+    margin-bottom: 0em
+}
+.search-guide .search-accordion .panel {
+    background: none
+}
+.search-guide .search-accordion .accTitle>a {
+    padding-top: 1em;
+    padding-bottom: 1em
+}
+.search-guide .search-accordion .open {
+    background-color: #fff
+}
+@media only screen and (max-width: 960px) {
+    .search-guide .find-guide-box-teaching-period,
+    .search-guide .find-guide-box-faculty,
+    .search-guide .find-guide-box-year {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0
+    }
+    .search-guide .find-guide-box-teaching-period.np,
+    .search-guide .find-guide-box-faculty.np,
+    .search-guide .find-guide-box-year.np {
+        padding: 0
+    }
+}
+.refine-search-guide .searchBox,
+.refine-search-guide .submitContainer {
+    width: 100%;
+    clear: both;
+    padding: none
+}
+.refine-search-guide .left-refine-search {
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 32%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 1em;
+    margin-top: 2em;
+    background-color: #f5f6f6;
+    float: left;
+    display: block
+}
+.refine-search-guide .left-refine-search.np {
+    padding: 0
+}
+.refine-search-guide .left-refine-search:last-of-type {
+    margin-right: 0
+}
+.refine-search-guide .left-refine-search .search-seperator {
+    border-top: 1px solid #ccc;
+    display: block;
+    clear: both
+}
+.refine-search-guide .left-refine-search .searchBox {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 100%;
+    margin-right: 0;
+    margin: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0
+}
+.refine-search-guide .left-refine-search .searchBox.np {
+    padding: 0
+}
+.refine-search-guide .left-refine-search .searchBox input[type="text"] {
+    width: 70%;
+    width: -moz-calc(90% - 40px);
+    width: -webkit-calc(90% - 40px);
+    width: calc(90% - 40px)
+}
+.refine-search-guide .left-refine-search .search-icon {
+    clear: none;
+    background-image: url(images/ugm-search-small-white.png);
+    background-repeat: no-repeat;
+    background-position: 13px 10px;
+    background-size: 22px 23px;
+    height: 44px;
+    width: 44px;
+    float: right;
+    clear: both;
+    margin-top: 0
+}
+.refine-search-guide .left-refine-search .termQueryItemLabel {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.refine-search-guide .left-refine-search .refine-fieldset {
+    clear: both!important;
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 100%;
+    margin-right: 0
+}
+.refine-search-guide .left-refine-search .refine-fieldset.np {
+    padding: 0
+}
+.refine-search-guide .left-refine-search input[type="checkbox"]+label {
+    width: 70%;
+    width: -moz-calc(100% - 29px);
+    width: -webkit-calc(100% - 29px);
+    width: calc(100% - 29px)
+}
+.refine-search-guide .left-refine-search input[type="checkbox"] {
+    margin-left: 0
+}
+.refine-search-guide .left-refine-search fieldset.panel {
+    margin-top: 0
+}
+.refine-search-guide .left-refine-search .accordion .open {
+    background-color: #fff
+}
+.refine-search-guide .left-refine-search fieldset {
+    border: none;
+    width: 100%;
+    margin: 0
+}
+.refine-search-guide .left-refine-search fieldset fieldset legend {
+    font-size: 18px;
+    font-size: 1.8rem
+}
+.refine-search-guide #results {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 66%;
+    margin: 0;
+    padding-left: 3em;
+    float: right
+}
+.refine-search-guide #results.np {
+    padding: 0
+}
+.refine-search-guide .find-unit-help-container {
+    float: right
+}
+@media only screen and (max-width: 960px) {
+    .refine-search-guide .find-unit-help-container {
+        float: left;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        display: block;
+        clear: both;
+        width: 100%
+    }
+}
+.refine-search-guide .find-unit-help-link {
+    background-size: 20px 20px;
+    background-image: url(images/ugm-help-small-black.png) !important;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    height: 30px;
+    display: inline-block;
+    float: right;
+    margin-top: -10px
+}
+@media only screen and (max-width: 960px) {
+    .refine-search-guide .find-unit-help-link {
+        float: left
+    }
+}
+.refine-search-guide .find-unit-help {
+    background-color: #f5f6f6;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em
+}
+.refine-search-guide .resultSortContainer select {
+    width: 8em
+}
+.refine-search-guide .result {
+    margin-bottom: 2em;
+    margin-top: 2em
+}
+.refine-search-guide .result a {
+    font-size: 18px;
+    font-size: 1.8rem
+}
+@media only screen and (max-width: 640px) {
+    .refine-search-guide .left-refine-search {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0;
+        margin-right: -55px
+    }
+    .refine-search-guide .left-refine-search.np {
+        padding: 0
+    }
+    .refine-search-guide #results {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0;
+        margin-right: -55px
+    }
+    .refine-search-guide #results.np {
+        padding: 0
+    }
+}
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
+    .refine-search-guide .left-refine-search {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0;
+        margin-right: -55px
+    }
+    .refine-search-guide .left-refine-search.np {
+        padding: 0
+    }
+    .refine-search-guide #results {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0;
+        margin-right: -55px
+    }
+    .refine-search-guide #results.np {
+        padding: 0
+    }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .refine-search-guide .left-refine-search {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0;
+        margin-right: -55px
+    }
+    .refine-search-guide .left-refine-search.np {
+        padding: 0
+    }
+    .refine-search-guide #results {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0;
+        margin-right: -55px
+    }
+    .refine-search-guide #results.np {
+        padding: 0
+    }
+}
+.view-guide {
+    margin-top: 2em
+}
+.view-guide .publishing-title {
+    width: 80%;
+    float: left
+}
+.view-guide .publishing-title h2 .title {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 35px;
+    font-size: 3.5rem
+}
+.view-guide .publishing-pdf-button {
+    width: 10%;
+    float: right;
+    margin-top: 1em
+}
+.view-guide .publishing-pdf-button a {
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    float: right;
+    clear: both;
+    height: 55px;
+    width: 55px;
+    display: inline-block;
+    background-image: url(images/ugm-download-pdf-big-white.png);
+    background-size: 26px 40px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-position: center center
+}
+.view-guide .publishing-pdf-button a:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.view-guide .publishing-pdf-button a span {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+.view-guide .publishing-pdf-button a:hover {
+    background-color: #004185
+}
+.view-guide .contents {
+    clear: both
+}
+.view-guide .skip-to-toc {
+    float: right
+}
+.view-guide .skip-to-toc a {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    float: right;
+    clear: both;
+    position: fixed;
+    right: 0;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    z-index: 3;
+    bottom: 0px
+}
+.view-guide .skip-to-toc a:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.view-guide .skip-to-toc a:hover {
+    background-color: #004185
+}
+.svg .view-guide .publishing-pdf-button a {
+    background-image: url(images/ugm-download-pdf-white.svg)
+}
+#tocContainer.accordion {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 32%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1em;
+    background-color: #f5f6f6;
+    clear: left;
+    padding: 0
+}
+#tocContainer.accordion.np {
+    padding: 0
+}
+#tocContainer.accordion:last-of-type {
+    margin-right: 0
+}
+#tocContainer.accordion .accContent {
+    padding: 0
+}
+#tocContainer.accordion .toc-header {
+    font-size: 18px;
+    font-size: 1.8rem;
+    margin: 0
+}
+#tocContainer.accordion .tocItem {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-right: 1em;
+    border-top: 1px solid #ccc
+}
+#tocContainer.accordion .tocItem a {
+    cursor: pointer;
+    text-decoration: none
+}
+#tocContainer.accordion .tocItem a:hover {
+    text-decoration: underline
+}
+#tocContainer.accordion .toc_item_1 {
+    padding-left: 4%
+}
+#tocContainer.accordion .toc_item_2 {
+    padding-left: 6%
+}
+#tocContainer.accordion .toc_item_3 {
+    padding-left: 8%
+}
+#tocContainer.accordion .toc_item_4 {
+    padding-left: 10%
+}
+#tocContainer.accordion .toc_item_5 {
+    padding-left: 12%
+}
+#tocContainer.accordion .toc_item_6 {
+    padding-left: 14%
+}
+@media only screen and (max-width: 960px) {
+    #tocContainer.accordion {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0;
+        padding: 0
+    }
+    #tocContainer.accordion.np {
+        padding: 0
+    }
+}
+#UnitContent {
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 66%;
+    clear: right;
+    margin-right: 0;
+    margin-top: 1em;
+    margin-left: 1em;
+    height: 100%;
+    border: 1px solid #ccc;
+    padding: 0
+}
+#UnitContent.np {
+    padding: 0
+}
+#UnitContent iframe {
+    width: 100%;
+    height: 2000px;
+    border: 0px
+}
+@media only screen and (max-width: 960px) {
+    #UnitContent {
+        float: left;
+        margin: 0 2% 20px 0;
+        padding: 10px;
+        _display: inline;
+        position: relative;
+        word-wrap: break-word;
+        width: 100%;
+        margin-right: 0
+    }
+    #UnitContent.np {
+        padding: 0
+    }
+}
+#UnitContent div {
+    clear: both;
+    overflow: auto
+}
+#UnitContent h5,
+#UnitContent h6 {
+    font-size: 15px;
+    font-size: 1.5rem
+}
+#UnitContent .fieldChoiceItem label,
+#UnitContent .fieldChoiceItem input[type="checkbox"],
+#UnitContent .fieldChoiceItem input[type="radio"],
+#UnitContent .fieldChoiceItem .checkbox-hidden-sim {
+    margin-top: .2em!important
+}
+#rolloverupdatearea iframe {
+    width: 100%
+}
+.modal-wide .modal-dialog-inner {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    max-height: 100%
+}
+.content-wide .wrapper {
+    max-width: 98%
+}
+.content-wide .showAuditDataGrid .dataGridTable {
+    width: 100%
+}
+.content-wide .showAuditGroupBy select {
+    width: initial
+}
+.audit-trail img {
+    max-width: 100%!important;
+    height: auto!important
+}
+.audit-trail .diff-change,
+.audit-trail .diff-text-old {
+    color: blue;
+    border: 1px solid blue
+}
+.audit-trail .diff-new,
+.audit-trail .diff-text-new {
+    border: 1px solid #098902;
+    color: #098902
+}
+.audit-trail .diff-delete,
+.audit-trail .diff-text-del {
+    color: #B60200;
+    border: 1px solid #B60200
+}
+.diff-container {
+    clear: both;
+    float: left;
+    margin: 0 2% 20px 0;
+    padding: 10px;
+    _display: inline;
+    position: relative;
+    word-wrap: break-word;
+    width: 100%;
+    margin-right: 0
+}
+.diff-container.np {
+    padding: 0
+}
+.diff-container .diff-l-box,
+.diff-container .diff-r-box {
+    float: left;
+    position: relative;
+    width: 49%;
+    margin: 0 5px 5px 0;
+    border: 1px solid #000
+}
+@media only screen and (max-width: 640px) {
+    .diff-container .diff-l-box,
+    .diff-container .diff-r-box {
+        width: 48%
+    }
+}
+.diff-container .diff-l-box h3,
+.diff-container .diff-r-box h3 {
+    padding: 5px;
+    height: 50px;
+    margin: 0;
+    border-bottom: 1px solid #000
+}
+.diff-container .diff-l-content,
+.diff-container .diff-r-content {
+    overflow: scroll;
+    height: 550px;
+    width: 95%;
+    margin: 10px
+}
+@media only screen and (max-width: 640px) {
+    .diff-container .diff-l-content,
+    .diff-container .diff-r-content {
+        height: 450px
+    }
+}
+.diff-container .diff-r-box {
+    clear: right
+}
+.diff-container h3.med-txt {
+    background: #f5f6f6
+}
+.diff-container .diff-delete {
+    border: 2px solid #F00
+}
+.diff-container .diff-new {
+    border: 2px solid #008000
+}
+.diff-container .diff-text-del {
+    color: #00F;
+    border-bottom: 2px solid #00F
+}
+.diff-container .diff-text-new {
+    color: #008000;
+    border-bottom: 2px solid #008000
+}
+a#sideBySideBack {
+    display: inline-block;
+    font-weight: bold;
+    text-shadow: none;
+    cursor: pointer;
+    padding: 1em 1.5em;
+    margin-right: 1.071em;
+    background-color: #32659c;
+    color: #fff;
+    text-decoration: none;
+    clear: both
+}
+a#sideBySideBack:hover {
+    text-decoration: underline;
+    background-color: #0066a9
+}
+.import-form .import-destination,
+.import-form .import-origin {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em
+}
+.import-form .import-destination h3,
+.import-form .import-origin h3,
+.import-form .import-destination legend,
+.import-form .import-origin legend {
+    margin-top: 0
+}
+.import-form #entityName {
+    font-size: 15px;
+    font-size: 1.5rem
+}
+.import-form #entityName h4 {
+    margin: 0
+}
+.import-form #entityName p {
+    margin-bottom: 1em;
+    margin-top: 0
+}
+.import-form .import-origin legend {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0
+}
+.import-form .import-origin label {
+    font-weight: bold
+}
+.import-form .import-select-fields .fieldHeaderText {
+    font-size: 15px;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0
+}
+.import-form #fieldListing h2 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: bold
+}
+.import-form .button-import button {
+    padding: 1em 1.5em;
+    height: 48px
+}
+.import-form .button-import button span {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow: visible
+}
+.import-form .button-import button.disabled {
+    background-color: #eee;
+    color: #0066a9;
+    color: #242424
+}
+.import-form .button-import button.disabled:hover {
+    background-color: #eee;
+    text-decoration: underline
+}
+.import-form .button-import button.disabled:hover {
+    background-color: #eee;
+    text-decoration: none;
+    cursor: text
+}
+.import-form .import-success {
+    display: block;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid #9acd32;
+    background-color: #C7FF97
+}
+.import-form .import-success h3 {
+    margin-top: 0
+}
+.import-form .import-fails {
+    display: block;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid #ca322a;
+    background-color: #EFA6AF
+}
+.import-form .import-fails h3 {
+    margin-top: 0
+}
+.import-form td.dataGridDataItem {
+    min-width: 44px
+}
+.import-form .statusCellContainer button {
+    background-color: #00528C;
+    font-weight: bold;
+    color: #fff;
+    padding: 1em 1.5em;
+    font-size: 15px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: block;
+    clear: both
+}
+.import-form .statusCellContainer button:hover {
+    background-color: #004185;
+    font-weight: bold;
+    color: #fff;
+    font-size: 15px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 0px none
+}
+.import-diff {
+    clear: right
+}
+.import-diff .import-diff-destination,
+.import-diff .import-diff-source {
+    float: left;
+    position: relative;
+    width: 49%;
+    margin: 0 5px 5px 0;
+    border: 1px solid #000
+}
+@media only screen and (max-width: 640px) {
+    .import-diff .import-diff-destination,
+    .import-diff .import-diff-source {
+        width: 48%
+    }
+}
+.import-diff .import-diff-title {
+    padding: 5px;
+    min-height: 90px;
+    margin: 0;
+    background: #f5f6f6;
+    border-bottom: 1px solid #000
+}
+.import-diff h3.import-diff-header {
+    margin: 0
+}
+.import-diff h4.import-diff-subheader {
+    margin: 0;
+    font-weight: normal
+}
+.import-diff .import-diff-content {
+    overflow: scroll;
+    height: 90%;
+    max-height: 450px;
+    min-height: 200px;
+    width: 95%;
+    margin: 10px
+}
+@media only screen and (max-width: 640px) {
+    .import-diff .import-diff-content {
+        height: 450px
+    }
+}
+.import-form .import-select-fields .fieldHeaderText {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}

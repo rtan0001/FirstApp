@@ -1,0 +1,13 @@
+[Unit]
+Description=unit guide manager
+After=cloud-final.service
+
+[Service]
+Restart=on-failure
+ExecStart=/opt/ugm/start.sh
+ExecStop=/opt/ugm/stop.sh
+Type=forking
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+    <mode>{{ mode_unencrypted }}</mode>
+    <baseUrl>http://{{ base_url_unencrypted }}:80</baseUrl> <!-- please configure this baseUrl to UGM's proxy if there is one -->
+    <fonts>
+        <font>/fonts/ARIALUNI.TTF</font>
+        <font>/fonts/HelveticaNeueLTStd-Lt 2.otf</font>
+        <font>/fonts/HelveticaNeueLTStd-Lt.otf</font>
+        <font>/fonts/MSYH.TTF</font>
+        <font>/fonts/MSYHBD.TTF</font>
+        <font>/fonts/SIMSUN.TTC</font>
+        <font>/fonts/SIMSUNB.TTF</font>
+    </fonts>
+    <staffSearchUrl>https://my.monash.edu.au/tools/search/staff</staffSearchUrl>
+
+    <db>
+        <driver>oracle.jdbc.OracleDriver</driver>
+        <url>jdbc:oracle:thin:@//{{ ugm_db.endpoint_unencrypted }}:{{ ugm_db.port_unencrypted }}/{{ ugm_db.db_name_unencrypted }}</url>
+        <user>{{ ugm_db.user_unencrypted }}</user>
+        <password>{{ ugm_db.password }}</password>
+        <startingPoolSize>2</startingPoolSize>
+        <maximumPoolSize>2</maximumPoolSize>
+        <doNotExpandBeyond>5</doNotExpandBeyond>
+        <readTimeOut>50000</readTimeOut>
+        <connectionTimeOut>20000</connectionTimeOut>
+        <allowTemporaryPoolExpansion>true</allowTemporaryPoolExpansion>
+    </db>
+    <!--<dbImporterInterval>18000</dbImporterInterval> -->
+    <!--  <authCacheRefreshInterval>10</authCacheRefreshInterval>   -->
+    <callistadb>
+        <driver>oracle.jdbc.driver.OracleDriver</driver>
+        <url>jdbc:oracle:thin:@//{{ calista_db.endpoint_unencrypted }}:{{ calista_db.port_unencrypted }}/{{ calista_db.db_name_unencrypted }}</url>
+        <user>{{ calista_db.user_unencrypted }}</user>
+        <password>{{ calista_db.password }}</password>
+        <startingPoolSize>2</startingPoolSize>
+        <maximumPoolSize>10</maximumPoolSize>
+        <doNotExpandBeyond>12</doNotExpandBeyond>
+        <readTimeOut>50000</readTimeOut>
+        <connectionTimeOut>20000</connectionTimeOut>
+        <allowTemporaryPoolExpansion>true</allowTemporaryPoolExpansion>
+    </callistadb>
+
+    <monashCasUrl>{{ monash_cas_url_unencrypted }}</monashCasUrl>
+    <!--
+       <monashCasUrl>https://my.monash.edu.au/authentication/cas</monashCasUrl>
+    -->
+    <authorizations>
+        <superUserGroup>UGM University Administrators Group</superUserGroup>
+        {% for user in administrators_unencrypted %}
+            <superUser>{{ user }}</superUser>
+        {% endfor %}
+    </authorizations>
+    <email>
+        <smtpServer>{{ email.smtp_server_unencrypted }}</smtpServer>
+        <smtpPort>{{ email.smtp_port_unencrypted }}</smtpPort>
+        <sslRequired>true</sslRequired>
+        <username>{{ email.username_unencrypted }}</username>
+        <password>{{ email.password }}</password>
+        <fromEmail>no-reply-ugm@monash.edu</fromEmail>
+        <fromEmailName>Unit guide Manager Application</fromEmailName>
+    </email>
+    <emailNotification>
+        <subject>{{ notifications_unencrypted.subject }}</subject>
+        <addresses>
+        {% for address in notifications_unencrypted.addresses %}
+            <address>{{ address }}</address>
+        {% endfor %}
+        </addresses>
+    </emailNotification>
+    <ldap>
+        <host>{{ ldap.host_unencrypted }}</host>
+        <port>{{ ldap.port_unencrypted }}</port>
+        <bindUser>{{ ldap.bind_user_unencrypted }}</bindUser>
+        <bindPass>{{ ldap.bind_password }}</bindPass>
+        <bindBase>{{ ldap.bind_base_unencrypted }}</bindBase>
+        <maxConnectionPoolSize>10</maxConnectionPoolSize>
+    </ldap>
+    <mixApi>
+        <restBaseUrl>{{ mix_api.base_url_unencrypted }}</restBaseUrl>
+        <clientId>{{ mix_api.client_id_unencrypted }}</clientId>
+        <clientSecret>{{ mix_api.client_secret }}</clientSecret>
+        <httpTimeout>10</httpTimeout> <!-- in seconds -->
+    </mixApi>
+    <!-- pls update ugeprops-backend.xml and ugeprops-frontend.xml when updating <deliveryModes> -->
+    <deliveryModes>
+        <deliveryMode code="ESP-EC" value="Extension study"/>
+        <deliveryMode code="BLOCK-OFF" value="Off-campus block of classes"/>
+        <deliveryMode code="DAY-OFF" value="Off-campus day class"/>
+        <deliveryMode code="DE" value="Off-campus"/>
+        <deliveryMode code="DE-ONLINE" value="Off-campus with print and online delivery"/>
+        <deliveryMode code="EVEN-OFF" value="Off-campus evening class"/>
+        <deliveryMode code="EXT-CAND" value="External Candidature"/>
+        <deliveryMode code="MO" value="Online"/>
+        <deliveryMode code="ONLINE" value="Online"/>
+        <deliveryMode code="SPLIT-OFF" value="Off-campus split block of classes"/>
+        <deliveryMode code="WEEKEND-OF" value="Off-campus weekend classes"/>
+        <deliveryMode code="BLOCK-ON" value="On-campus block of classes"/>
+        <deliveryMode code="DAY" value="Day"/>
+        <deliveryMode code="EVENING" value="Evening"/>
+        <deliveryMode code="ONLINE-DAY" value="Online plus day component"/>
+        <deliveryMode code="RES-DAY" value="Day residential"/>
+        <deliveryMode code="RES-EVEN" value="Evening residential"/>
+        <deliveryMode code="SPLIT-ON" value="On-campus split block of classes"/>
+        <deliveryMode code="WEEKEND-ON" value="On-campus weekend classes"/>
+        <deliveryMode code="FLEXIBLE" value="Flexible"/>
+    </deliveryModes>
+    <!-- pls update ugeprops-backend.xml and ugeprops-frontend.xml when updating <locations> -->
+    <locations>
+        <location code="ALFRED" value="Alfred Hospital"/>
+        <location code="AUSTIN" value="Austin Hospital"/>
+        <location code="BAIRNSDALE" value="Bairnsdale"/>
+        <location code="BAKER" value="Baker"/>
+        <location code="BENDIGO" value="Bendigo"/>
+        <location code="BERWICK" value="Berwick"/>
+        <location code="BOX HILL" value="Box Hill Hospital"/>
+        <location code="BURNET" value="Burnet"/>
+        <location code="CAULFIELD" value="Caulfield"/>
+        <location code="CHILE" value="Chile"/>
+        <location code="CITY" value="Melbourne City"/>
+        <location code="CLAYTON" value="Clayton"/>
+        <location code="GIPPSLAND" value="Gippsland"/>
+        <location code="KINGS-COLL" value="King's College London"/>
+        <location code="LEONGATHA" value="Leongatha"/>
+        <location code="LRH" value="Latrobe Regional Hospital"/>
+        <location code="MALAYSIA" value="Malaysia"/>
+        <location code="MILDURA" value="Mildura"/>
+        <location code="MMC" value="Monash Medical Centre"/>
+        <location code="MMS-ALFRED" value="Alfred Hospital"/>
+        <location code="MOE" value="Moe"/>
+        <location code="MT-ELIZA" value="Mt Eliza"/>
+        <location code="MURDOCH" value="Murdoch"/>
+        <location code="NOTT HILL" value="Notting Hill"/>
+        <location code="NT" value="Northern Territory"/>
+        <location code="ONLINE" value="Monash Online"/>
+        <location code="OS-CHI-BEI" value="Beijing"/>
+        <location code="OS-CHI-GUA" value="Guangzhou"/>
+        <location code="OS-CHI-HAN" value="Hangzhou"/>
+        <location code="OS-CHI-SEU" value="Suzhou"/>
+        <location code="OS-CHI-SHA" value="Shanghai"/>
+        <location code="OS-HKG" value="Hong Kong"/>
+        <location code="OS-HKG-CID" value="Hong Kong CID"/>
+        <location code="OS-IRAN" value="Iran"/>
+        <location code="OS-MACAU" value="Macau"/>
+        <location code="OS-MALAY" value="Malaysia"/>
+        <location code="OS-PNG" value="Papua New Guinea"/>
+        <location code="OS-SGP" value="Singapore"/>
+        <location code="OS-THAI" value="Thailand"/>
+        <location code="OS-USA" value="United States of America"/>
+        <location code="OTHER-OS" value="Overseas"/>
+        <location code="PARKVILLE" value="Parkville"/>
+        <location code="PENINSULA" value="Peninsula"/>
+        <location code="PETER MAC" value="Peter Mac"/>
+        <location code="PHI" value="Prince Henry's Intitute"/>
+        <location code="PRATO" value="Prato"/>
+        <location code="SAFRICA" value="South Africa"/>
+        <location code="SAUDI" value="Saudi Arabia"/>
+        <location code="SOUTHBANK" value="Southbank"/>
+        <location code="SYDNEY" value="Sydney"/>
+        <location code="WEHI" value="WEHI"/>
+    </locations>
+    <!-- pls update ugeprops-backend.xml and ugeprops-frontend.xml when updating <teachingPeriods> -->
+    <teachingPeriods>
+        <teachingPeriod code="FY-01" value="Full-year"/>
+        <teachingPeriod code="FY-32" value="Full-year (extended)"/>
+        <teachingPeriod code="MBA-TP1-01" value="MBA 1"/>
+        <teachingPeriod code="MBA-TP2-01" value="MBA 2"/>
+        <teachingPeriod code="MBA-TP3-01" value="MBA 3"/>
+        <teachingPeriod code="MBA-TP4-01" value="MBA 4"/>
+        <teachingPeriod code="MBA-TP5-01" value="MBA 5"/>
+        <teachingPeriod code="MO-TP1-01" value="Monash online 1"/>
+        <teachingPeriod code="MO-TP2-01" value="Monash online 2"/>
+        <teachingPeriod code="MO-TP3-01" value="Monash online 3"/>
+        <teachingPeriod code="MO-TP4-01" value="Monash online 4"/>
+        <teachingPeriod code="MO-TP5-01" value="Monash online 5"/>
+        <teachingPeriod code="MO-TP6-01" value="Monash online 6"/>
+        <teachingPeriod code="OCT-MY-01" value="October intake - Malaysia"/>
+        <teachingPeriod code="OCT-MSA-01" value="October intake - South Africa"/>
+        <teachingPeriod code="S1-01" value="Semester 1"/>
+        <teachingPeriod code="S1-32" value="Semester 1 (extended)"/>
+        <teachingPeriod code="S1-60" value="Semester 1 (northern)"/>
+        <teachingPeriod code="S2-01" value="Semester 2"/>
+        <teachingPeriod code="S2-32" value="Semester 2 (extended)"/>
+        <teachingPeriod code="S2-60" value="Semester 2 (northern)"/>
+        <teachingPeriod code="S2-S1-02" value="Semester 2 - semester 1"/>
+        <teachingPeriod code="S2-SS-02" value="Semester 2 - summer A"/>
+        <teachingPeriod code="SSA-02" value="Summer semester A"/>
+        <teachingPeriod code="SSB-01" value="Summer semester B"/>
+        <teachingPeriod code="SS-S1-01" value="Summer A - semester 1"/>
+        <teachingPeriod code="T1-57" value="Term 1"/>
+        <teachingPeriod code="T2-57" value="Term 2"/>
+        <teachingPeriod code="T3-57" value="Term 3"/>
+        <teachingPeriod code="T4-57" value="Term 4"/>
+        <teachingPeriod code="T1-58" value="Trimester 1"/>
+        <teachingPeriod code="T2-58" value="Trimester 2"/>
+        <teachingPeriod code="T3-58" value="Trimester 3"/>
+        <teachingPeriod code="TRI-A-29" value="Trimester A"/>
+        <teachingPeriod code="TRI-B-29" value="Trimester B"/>
+        <teachingPeriod code="TRI-C-29" value="Trimester C"/>
+        <teachingPeriod code="WS-01" value="Winter semester"/>
+    </teachingPeriods>
+    <!-- pls update ugeprops-backend.xml and ugeprops-frontend.xml when updating <publishingTeachingPeriods> -->
+    <publishingTeachingPeriods>
+        <publishingTeachingPeriod code="S1-01" value="Semester 1"/>
+        <publishingTeachingPeriod code="S2-01" value="Semester 2"/>
+        <publishingTeachingPeriod code="SSA-02" value="Summer semester A"/>
+        <publishingTeachingPeriod code="SSB-01" value="Summer semester B"/>
+        <publishingTeachingPeriod code="FY-01" value="Full-year"/>
+        <publishingTeachingPeriod code="WS-01" value="Winter semester"/>
+        <publishingTeachingPeriod code="T1-57" value="Term 1"/>
+        <publishingTeachingPeriod code="T2-57" value="Term 2"/>
+        <publishingTeachingPeriod code="T3-57" value="Term 3"/>
+        <publishingTeachingPeriod code="T4-57" value="Term 4"/>
+        <publishingTeachingPeriod code="T1-58" value="Trimester 1"/>
+        <publishingTeachingPeriod code="T2-58" value="Trimester 2"/>
+        <publishingTeachingPeriod code="T3-58" value="Trimester 3"/>
+        <publishingTeachingPeriod code="FY-32" value="Full-year (extended)"/>
+        <publishingTeachingPeriod code="MBA-TP1-01" value="MBA 1"/>
+        <publishingTeachingPeriod code="MBA-TP2-01" value="MBA 2"/>
+        <publishingTeachingPeriod code="MBA-TP3-01" value="MBA 3"/>
+        <publishingTeachingPeriod code="MBA-TP4-01" value="MBA 4"/>
+        <publishingTeachingPeriod code="MBA-TP5-01" value="MBA 5"/>
+        <publishingTeachingPeriod code="MO-TP1-01" value="Monash online 1"/>
+        <publishingTeachingPeriod code="MO-TP2-01" value="Monash online 2"/>
+        <publishingTeachingPeriod code="MO-TP3-01" value="Monash online 3"/>
+        <publishingTeachingPeriod code="MO-TP4-01" value="Monash online 4"/>
+        <publishingTeachingPeriod code="MO-TP5-01" value="Monash online 5"/>
+        <publishingTeachingPeriod code="MO-TP6-01" value="Monash online 6"/>
+        <publishingTeachingPeriod code="OCT-MY-01" value="October intake - Malaysia"/>
+        <publishingTeachingPeriod code="OCT-MSA-01" value="October intake - South Africa"/>
+        <publishingTeachingPeriod code="S1-32" value="Semester 1 (extended)"/>
+        <publishingTeachingPeriod code="S1-60" value="Semester 1 (northern)"/>
+        <publishingTeachingPeriod code="S2-32" value="Semester 2 (extended)"/>
+        <publishingTeachingPeriod code="S2-60" value="Semester 2 (northern)"/>
+        <publishingTeachingPeriod code="S2-S1-02" value="Semester 2 - semester 1"/>
+        <publishingTeachingPeriod code="S2-SS-02" value="Semester 2 - summer A"/>
+        <publishingTeachingPeriod code="SS-S1-01" value="Summer A - semester 1"/>
+        <publishingTeachingPeriod code="TRI-A-29" value="Trimester A"/>
+        <publishingTeachingPeriod code="TRI-B-29" value="Trimester B"/>
+        <publishingTeachingPeriod code="TRI-C-29" value="Trimester C"/>
+    </publishingTeachingPeriods>
+    <!-- pls update ugeprops-backend.xml and ugeprops-frontend.xml when updating <publishingFaculties> -->
+    <publishingFaculties>
+        <publishingFaculty name="FACULTY OF ART, DESIGN AND ARCHITECTURE"
+                           value="Faculty of Art, Design and Architecture"/>
+        <publishingFaculty name="FACULTY OF ARTS" value="Faculty of Arts"/>
+        <publishingFaculty name="FACULTY OF BUSINESS AND ECONOMICS" value="Faculty of Business and Economics"/>
+        <publishingFaculty name="FACULTY OF EDUCATION" value="Faculty of Education"/>
+        <publishingFaculty name="FACULTY OF ENGINEERING" value="Faculty of Engineering"/>
+        <publishingFaculty name="FACULTY OF INFORMATION TECHNOLOGY" value="Faculty of Information Technology"/>
+        <publishingFaculty name="FACULTY OF LAW" value="Faculty of Law"/>
+        <publishingFaculty name="FACULTY OF MEDICINE, NURSING AND HEALTH SCIENCES"
+                           value="Faculty of Medicine, Nursing and Health Sciences"/>
+        <publishingFaculty name="FACULTY OF PHARMACY AND PHARMACEUTICAL SCIENCES"
+                           value="Faculty of Pharmacy and Pharmaceutical Sciences"/>
+        <publishingFaculty name="FACULTY OF SCIENCE" value="Faculty of Science"/>
+        <publishingFaculty name="MALAYSIA GENERAL STUDIES" value="Malaysia General Studies" />
+    </publishingFaculties>
+    <perUserCache>
+        <enabled>true</enabled>
+        <acceptableStaleness>600</acceptableStaleness>
+    </perUserCache>
+</properties>

@@ -1,0 +1,48 @@
+---
+- name: download artifact
+  uri:
+    url: https://monashuni.artifactoryonline.com/monashuni/deploy-apps/ugm/3.4/unit-guide-editor-3.4.1-b54.zip
+    dest: /tmp/
+
+- name: unzip artifact
+  shell: unzip /tmp/unit-guide-editor-3.4.1-b54.zip -d /tmp
+  become: yes
+
+- name: install app
+  shell: mv /tmp/unit-guide-editor-3.4.1-b54/ /opt/ugm
+  become: yes
+
+- name: copy config template
+  copy:
+    src: ugeprops.xml.jinja
+    dest: /opt/ugm/appConf/ugeprops.xml.jinja
+    mode: 0644
+  become: yes
+
+- name: copy env
+  copy:
+    src: setEnvironment.sh
+    dest: /opt/ugm/setEnvironment.sh
+  become: yes
+
+- name: set permissions
+  file:
+    path: /opt/ugm/{{ item }}
+    state: file
+    mode: 0755
+  become: yes
+  with_items:
+  - start.sh
+  - stop.sh
+
+- name: copy service file
+  copy:
+    src: ugm.service
+    dest: /etc/systemd/system/ugm.service
+  become: yes
+
+- name: enable service
+  service:
+    name: ugm
+    enabled: yes
+  become: yes

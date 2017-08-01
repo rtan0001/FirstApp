@@ -1,0 +1,9 @@
+fixtures:
+  symlinks:
+    ugm: "#{source_dir}/roles/ugm"
+    common: "#{source_dir}/roles/common"
+    demo: "#{source_dir}/roles/demo"
+    cfnbootstrap: "#{source_dir}/roles/cfnbootstrap"
+    awslogs: "#{source_dir}/roles/awslogs"
+  repositories:
+    archive: "https://github.com/voxpupuli/puppet-archive.git"

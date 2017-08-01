@@ -1,0 +1,16 @@
+require 'rubygems'
+
+# spec_helper.rb
+require 'puppetlabs_spec_helper/module_spec_helper'
+
+require 'puppetlabs_spec_helper/rake_tasks'
+require 'ci/reporter/rake/rspec'
+require 'puppet-lint/tasks/puppet-lint'
+
+PuppetLint.configuration.send('disable_80chars')
+PuppetLint.configuration.ignore_paths = ["modules/**/*", "spec/**/*.pp", "pkg/**/*.pp"]
+
+ENV['CI_REPORTS'] = 'reports'
+ENV['STRICT_VARIABLES'] = 'no'
+
+task :spec => 'ci:setup:rspec'

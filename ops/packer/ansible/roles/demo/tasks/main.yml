@@ -1,0 +1,14 @@
+---
+- name: copy updated css file
+  copy:
+    src: monash-publishing.css
+    dest: /opt/ugm/monash-publishing.css
+    mode: 0644
+  become: yes
+
+- name: copy start script
+  copy:
+    src: start.sh
+    dest: /opt/ugm/start.sh
+    mode: 0755
+  become: yes

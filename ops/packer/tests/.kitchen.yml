@@ -1,0 +1,32 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: <%= ENV['KITCHEN_SSH_KEY_NAME'] || "cevo-dev" %>
+  region: ap-southeast-2
+  subnet_id: subnet-934bbfe5
+  instance_type: t2.medium
+  security_group_ids: sg-6cdae80b # SG allows ssh from anything in Shared Services
+  associate_public_ip: false
+
+transport:
+  ssh_key:  <%= ENV['KITCHEN_SSH_KEY_PEM'] || "~/.ssh/cevo-dev.pem" %>
+  connection_timeout: 10
+  connection_retries: 5
+  username: ec2-user
+
+# Busser runs the tests, and assumes that the ChefDK is installed by default.
+# Because we are not using Chef, we need to tell it to use the system Ruby.
+#  (see: https://github.com/test-kitchen/test-kitchen/issues/347)
+busser:
+  ruby_bindir: /usr/bin
+
+provisioner:
+  name: shell
+
+platforms:
+  - name: rhel-7
+    driver:
+        image_id: <%= ENV['SERVER_IMAGE_ID'] || "ami-69d8d20a" %>
+
+suites:
+  - name: default

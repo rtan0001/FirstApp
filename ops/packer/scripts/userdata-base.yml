@@ -1,0 +1,74 @@
+#cloud-config
+users:
+ - default
+
+# disable_root: 1
+# ssh_pwauth:   0
+
+# mount_default_fields: [~, ~, 'auto', 'defaults,nofail', '0', '2']
+# resize_rootfs_tmp: /dev
+# ssh_deletekeys:   0
+# ssh_genkeytypes:  ~
+# syslog_fix_perms: ~
+
+cloud_init_modules:
+ - migrator
+ - bootcmd
+ - write-files
+ - growpart
+ - resizefs
+ - set_hostname
+ - update_hostname
+ - update_etc_hosts
+ - rsyslog
+ - users-groups
+ - ssh
+
+# cloud_config_modules:
+#  - mounts
+#  - locale
+#  - set-passwords
+#  - yum-add-repo
+#  - package-update-upgrade-install
+#  - timezone
+#  - puppet
+#  - chef
+#  - salt-minion
+#  - mcollective
+#  - disable-ec2-metadata
+#  - runcmd
+
+# cloud_final_modules:
+#  - rightscale_userdata
+#  - scripts-per-once
+#  - scripts-per-boot
+#  - scripts-per-instance
+#  - scripts-user
+#  - ssh-authkey-fingerprints
+#  - keys-to-console
+#  - phone-home
+#  - final-message
+
+system_info:
+  default_user:
+    name: ec2-user
+    lock_passwd: true
+    gecos: Cloud User
+    groups: [wheel, adm, systemd-journal]
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    shell: /bin/bash
+  distro: rhel
+  paths:
+    cloud_dir: /var/lib/cloud
+    templates_dir: /etc/cloud/templates
+  ssh_svcname: sshd
+
+bootcmd:
+#Add ec2 user in access.conf so that it can login
+- service iptables stop
+- sed -i "/+:root:ALL/ { N; s/+:root:ALL/&\n+:ec2-user:ALL\n/ }"  /etc/security/access.conf
+- echo -e "DNS1=130.194.1.99\nDNS2=130.194.7.99" >> /etc/sysconfig/network
+- echo `curl http://169.254.169.254/latest/meta-data/instance-id`-v20.ocio.monash.edu > /etc/hostname
+runcmd:
+- service network restart
+# - service sshd restart

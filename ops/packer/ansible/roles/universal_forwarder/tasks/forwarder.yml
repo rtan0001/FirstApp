@@ -1,0 +1,77 @@
+---
+# This playbook install the apps required in a server
+
+- name: add splunk group
+  tags:
+   - install
+   - security
+  group: name=splunk state=present
+  become: yes
+
+- name: add splunk user
+  tags:
+   - install
+   - security
+  user: name=splunk comment="Splunk service user" shell=/usr/sbin/nologin groups=splunk,wheel createhome=no
+  become: yes
+
+- name: make /opt writetable by splunk
+  tags:
+   - install
+  file: path=/opt mode=777
+  become: yes
+
+- name: checking if splunk is install
+  tags: install
+  stat: path=/opt/splunkforwarder
+  register: splunk_path
+
+- name: splunk is install
+  tags: install
+  debug: msg='splunk is already installed under /opt/splunkforwarder'
+  when: splunk_path.stat.exists
+
+- name: download splunk binary
+  s3:
+      bucket: ugm-deploy
+      object: splunkforwarder-6.5.2-67571ef4b87d-Linux-x86_64.tgz
+      dest: /opt/splunkforwarder-6.5.2-67571ef4b87d-Linux-x86_64.tgz
+      mode: get
+  sudo: yes
+  sudo_user: splunk
+  when: splunk_path.stat.exists == false
+
+- name: install splunk binary
+  tags:
+   - install
+  unarchive:
+      src: /opt/splunkforwarder-6.5.2-67571ef4b87d-Linux-x86_64.tgz
+      dest: /opt/
+      remote_src: yes 
+      owner: splunk
+      group: splunk
+      creates: yes
+  sudo: yes
+  sudo_user: splunk
+  when: splunk_path.stat.exists == false
+
+- name: accept license and start splunk
+  tags:
+   - install
+  shell: /opt/splunkforwarder/bin/splunk start --accept-license
+  sudo: yes
+  sudo_user: splunk
+  when: splunk_path.stat.exists == false
+
+- name: enable boot-start
+  tags:
+   - install
+  shell: /opt/splunkforwarder/bin/splunk enable boot-start
+  when: splunk_path.stat.exists == false
+  become: yes
+
+- name: make /etc/init.d/splunk executable
+  tags:
+   - install
+  file: path=/etc/init.d/splunk mode=755
+  become: yes

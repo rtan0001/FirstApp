@@ -1,0 +1,64 @@
+{
+    "application": {
+        "VpcID":  "vpc-0bdd526e",
+        "Account":  "qat",
+
+        "OptionGroupName": "oracle-12c-oem",
+
+        "MultiAZ": "true",
+
+        "ElbSubnetA": "subnet-21305a44",
+        "ElbSubnetB": "subnet-5166f626",
+
+        "WebSubnetA": "subnet-21305a44",
+        "WebSubnetB": "subnet-5166f626",
+
+        "RdsSubnetA": "subnet-03305a66",
+        "RdsSubnetB": "subnet-3166f646",
+
+        "WebInstanceType": "t2.medium",
+        "WebAutoScalingDesiredCapacity": "1",
+        "WebAutoScalingMinSize": "1",
+        "WebAutoScalingMaxSize": "2",
+
+        "SyncServerSubnetA": "subnet-06b69062",
+        "SyncServerSubnetB": "subnet-a1b0e5d7",
+
+        "SyncServerInstanceType": "t2.medium",
+        "SyncServerAutoScalingDesiredCapacity": "1",
+        "SyncServerAutoScalingMinSize": "1",
+        "SyncServerAutoScalingMaxSize": "1",
+
+        "WEBJVMxms": "30",
+        "WEBJVMxmx": "50",
+        "SyncJVMxms": "30",
+        "SyncJVMxmx": "60",
+
+        "ELBScheme": "internal",
+        "HostedZoneName": "corp-qat.aws.monash.edu",
+        "SSLCertificateARN": "arn:aws:acm:ap-southeast-2:829292609546:certificate/f857bdd9-7669-4a33-be97-51a14031f220",
+
+        "S3Bucket": "monash-ugm-qat",
+        "ConfigFilename": "ugm.qat.yaml",
+
+        "KeyName": "codeninjas-qat",
+
+        "DBuser": "ugmqatdbuser",
+        "DBpassword": "KMSEncryptedAQICAHjLsQO0AN5EQfhVy8vIkTCPRRZiRtjVuhXveWmT9q+fVwHYgAOeUWTJe2Y6JLB8Qpg/AAAAczBxBgkqhkiG9w0BBwagZDBiAgEAMF0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMPwgVVnkF2QsVu0WtAgEQgDCwNUprAF4MoKEqKnXN13tL21XaMV8QtuEP+uhYjsLo+Lb8fOVgH8e2YdLMM81k4Gg=/KMSEncrypted",
+        "DBclass": "db.t2.large",
+        "DBengine": "oracle-ee",
+        "DBlicencemodel": "bring-your-own-license",
+        "DBengineversion": "12.1.0.2.v6",
+        "DBallocatedstorage": "350",
+        "InitialDatabaseSnapshot": "arn:aws:rds:ap-southeast-2:829292609546:snapshot:ugmqat-backup",
+
+        "KMSMasterKeyARN": "arn:aws:kms:ap-southeast-2:829292609546:key/8a9e64d0-1056-4e5e-b0cd-ee32c518b1d0"
+    },
+    "WAF": {
+        "SSLCertificateID": "ASCAJ4JTMFR7YYF7YHARE",
+        "PublicDomainName": "ugm-qat.monash.edu",
+        "Comment": "UGM QAT CloudFront",
+        "LoggingBucket": "s3-v20-qat-cloudfront.s3.amazonaws.com",
+        "OriginEndpoint": "waf-pub.corp-iae.aws.monash.edu"
+    }
+}
